@@ -1,0 +1,76 @@
+﻿/*500 error specific styles*/
+
+.error__500 {
+
+    & main {
+        @include s-spacing(padding-top, padding-bottom);
+        background-color: $color-dark-background;
+
+        & img {
+            @include s-spacing(margin-bottom);
+        }
+    }
+
+    & h1 {
+        @include xs-spacing(padding-bottom);
+        @include font-heading-small-devices-m-heading;
+
+        @include media-breakpoint-up(md) {
+            @include font-heading-xl-devices-m-heading;
+            padding-bottom: 1rem !important;
+        }
+
+        color: $color-white-space;
+    }
+
+    & h2 {
+        @include font-heading-small-devices-s-heading;
+
+        @include media-breakpoint-up(md) {
+            @include font-heading-xl-devices-s-heading;
+        }
+
+        color: $color-white-space;
+    }
+
+    & p {
+        @include font-paragraph-small-devices-paragraph-text;
+
+        @include media-breakpoint-up(md) {
+            @include font-paragraph-xl-devices-paragraph-text;
+        }
+
+        color: $color-white-space;
+    }
+
+    & .bg {
+        background-image: url('/img/Lesser-spotted-woodpecker-excavating-nest-hole-mature-apple-tree-ancient-orchard-naturePL-01530917-Sam-Hobson.jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 400px;
+
+        @include media-breakpoint-up(md) {
+            min-height: 500px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 100vh;
+        }
+
+        &.holding {
+            background-image: url('/img/Speckled-Wood-Butterfly-pupa-camouflaged-as-leaf-Naure-pl-01393006-Mark-Payne-Gill.jpg');
+        }
+    }
+
+    a {
+        color: $color-white-space;
+    }
+
+    a:hover {
+        color: $color-text;
+    }
+}

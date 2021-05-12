@@ -1,0 +1,42 @@
+﻿.thumbnail {
+
+    /*@include media-breakpoint-up(lg){
+        padding-bottom: 4.5rem;
+    }*/
+
+    &__thumbnail-container {
+        @include xs-spacing(margin-bottom);        
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+
+        &--logo {
+            @extend .col-4;
+            @extend .col-lg-12;
+            border: 1px solid rgba(0, 36, 25, 0.2);
+            text-align: center;
+            @include xs-spacing(margin-bottom);
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+                text-align: center;
+            }
+        }
+
+        &--profile {
+            text-align: left;
+            @include xs-spacing(margin-bottom);
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+                text-align: center;
+            }
+
+            &--image {
+                border-radius: 50%;
+              
+            }
+        }
+    }
+}

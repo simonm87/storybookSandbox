@@ -1,0 +1,40 @@
+﻿/*grid system*/
+
+.container-fluid .col-md-12 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.woodland-trust-spacing {
+    @include m-spacing(padding-bottom);
+}
+
+.woodland-trust-heading-spacing {
+    margin-bottom: 1rem;
+}
+.component-heading {
+    @include font-heading-xl-devices-m-heading;
+    @include m-spacing(padding-bottom);
+}
+
+.column-3 {
+    @extend .col-12;
+    @extend .col-lg-3;
+    @extend .offset-lg-0;
+
+    & .three-col-spacing {
+        @include media-breakpoint-up(lg) {
+            @include m-spacing(padding-bottom);
+        }
+    }
+}
+
+.column-6 {
+    @extend .col-12;
+    @extend .col-lg-6;
+    @extend .offset-lg-0;
+
+    & .three-col-spacing {
+        @include m-spacing(padding-bottom);
+    }
+}

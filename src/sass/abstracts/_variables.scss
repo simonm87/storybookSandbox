@@ -1,0 +1,28 @@
+﻿/*sass variables*/
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge( ( 0: 0, 1: ($spacer * .25), 2: ($spacer * .5), 3: $spacer, 4: ($spacer * 1.5), 5: ($spacer * 3), xl0: ($spacer * 4), // XL Spacing for S/XS Device
+xl1: ($spacer * 6), // XL Spacing for L/M Device
+xl2: ($spacer * 9), // XL Spacing for XL Device
+l0: ($spacer * 2.5), // L Spacing for S/XS Device
+l1: ($spacer * 4.5), // L Spacing for L/M Device
+l2: ($spacer * 6), // L Spacing for XL Device
+m0: ($spacer * 2), // M Spacing for S/XS Device
+m2: ($spacer * 4.5), // M Spacing for XL Device
+s0: ($spacer * 1.5), // S Spacing for S/XS Device
+s2: ($spacer * 3), // S Spacing for XL Device
+xs0: ($spacer * 1), // XS Spacing for S/XS Device
+xs2: ($spacer * 2), // XS Spacing for XL Device
+lc0: ($spacer * 1), // Large Component Spacing for S/XS Device
+lc2: ($spacer * 1.5), // Large Component Spacing for XL Device
+sc2: ($spacer * 1) // Small Component for XL Device
+), $spacers );

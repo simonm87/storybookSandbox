@@ -1,0 +1,213 @@
+﻿.vertical-tabs-heading {
+    /*@include m-spacing(padding-bottom);*/
+    padding-bottom: 1rem;
+}
+
+.wt-tabs {
+    overflow: hidden;
+
+    .tab-pane {
+        animation-duration: 2s;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+    //Accordion
+    .card {
+        border: none;
+
+        .card-header {
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+
+            .nav-link {
+                @include lc-spacing(padding-top);
+                @include lc-spacing(padding-bottom);
+                @include lc-spacing(padding-right);
+                color: #002419;
+                border: none;
+                background-color: #f4f7f5;
+                border-left: 4px solid #0da459;
+                margin: 0;
+                padding-left: 58px;
+
+                @include media-breakpoint-up(md) {
+                    padding-left: 0;
+                }
+                /*.wt-icon {
+                    &.icon-arrow {
+                        @include lc-spacing(margin-left, margin-right);
+                        width: 20px;
+                        transform-style: preserve-3d;
+                        margin-left: -40px;
+                        //transition: 1s;
+                        path {
+                            fill: #786F6F !important;
+                        }
+                    }
+                }*/
+                &.active .icon-img {
+                    filter: brightness(0) saturate(100%) invert(44%) sepia(31%) saturate(6891%) hue-rotate(129deg) brightness(96%) contrast(90%);
+                }
+
+                .icon-img {
+                    filter: brightness(0) saturate(100%) invert(43%) sepia(6%) saturate(390%) hue-rotate(314deg) brightness(99%) contrast(86%);
+                }
+
+                &:not(.collapsed) {
+                    .wt-icon {
+                        &.icon-arrow {
+                            transform: rotateY(180deg); /* W3C */
+                            -webkit-transform: rotateY(180deg); /* Safari &amp; Chrome */
+                            -moz-transform: rotateY(180deg); /* Firefox */
+                            -ms-transform: rotateY(180deg); /* Internet Explorer */
+                            -o-transform: rotateY(180deg); /* Opera */
+                            transform-style: preserve-3d; /* W3C */
+                            -webkit-transform-style: preserve-3d; /* Safari &amp; Chrome */
+                            //transition: 1s;
+                            path {
+                                fill: $color-accent-highlight-decor !important;
+                            }
+                        }
+                    }
+
+                    .icon-img {
+                        filter: brightness(0) saturate(100%) invert(44%) sepia(31%) saturate(6891%) hue-rotate(129deg) brightness(96%) contrast(90%);
+
+                        &.arrowIcon {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .card-body {
+            @include lc-spacing(padding);
+            flex-grow: 1;
+
+            @include media-breakpoint-up(lg) {
+                padding: 0;
+            }
+        }
+    }
+
+    .nav-link {
+        padding: 20px 20px 20px 0;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 0;
+        border-left: 4px solid #786F6F;
+        color: #786F6F;
+        font-family: AndesBold;
+        font-size: 18px;
+        line-height: 18px;
+        padding-left: 67px;
+
+        span {
+            vertical-align: middle !important;
+        }
+
+        &:hover {
+            border-color: #786F6F;
+            cursor: pointer;
+        }
+        /*.wt-icon {
+            &.icon-arrow {
+                //@include lc-spacing(margin-left, margin-right);
+                margin-left: -45px;
+                margin-right: 21px;
+                width: 20px;
+                transform-style: preserve-3d;
+                //transition: 1s;
+                path {
+                    fill: #786F6F;
+                }
+            }
+        }*/
+        .icon-img {
+            filter: brightness(0) saturate(100%) invert(43%) sepia(6%) saturate(390%) hue-rotate(314deg) brightness(99%) contrast(86%);
+            margin-left: -45px;
+            margin-right: 21px;
+
+            @include media-breakpoint-only(md) {
+                margin-left: 24px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+        color: $color-text;
+        border: none;
+        background-color: $color-light-background;
+        border-left: 4px solid $color-accent-highlight-decor;
+        /*.wt-icon {
+            &.icon-arrow {
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+                //transition: 1s;
+                path {
+                    fill: $color-accent-highlight-decor;
+                }
+            }
+        }*/
+        .icon-img {
+            filter: brightness(0) saturate(100%) invert(44%) sepia(31%) saturate(6891%) hue-rotate(129deg) brightness(96%) contrast(90%);
+
+            &.arrowIcon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .nav-tabs {
+        display: none;
+    }
+
+    .nav-item {
+        button {
+            padding-left: 67px;
+            width: 100%;
+            text-align: left !important;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        .nav-tabs {
+            display: flex;
+            flex-flow: column nowrap;
+            border: none;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card .card-header {
+            display: none;
+        }
+
+        .card .collapse {
+            display: block;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .tab-pane {
+            display: block !important;
+            opacity: 1;
+        }
+    }
+}

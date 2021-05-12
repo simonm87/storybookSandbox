@@ -1,0 +1,310 @@
+﻿/*button styles*/
+.btn {
+    &--action {
+        $ctacard: ".ctacard";
+        @extend .btn;
+        @include font-buttons-links-large-navigation-link;
+        border-radius: 2px;
+        padding: 10px 25px;
+
+        /*@include media-breakpoint-up(lg) {
+            padding: 10px 25px;
+        }*/
+
+        color: $color-text;
+        background: $btn-action-bg 50%;
+        border: 3px solid $btn-action-bg;
+        background-size: 100%;
+        font-size: 18px;
+        position: relative;
+        line-height: 28px;
+        max-width: 100%;
+        text-align: center;
+        white-space: normal;
+
+        #{$ctacard} & {
+            line-height: 22px;
+            font-size: 16px;
+            padding: 10px 16px;
+        }
+
+        &:not(.sm) {
+            @include media-breakpoint-up(lg) {
+                @include font-buttons-links-link-text-large;
+                padding: 15px 25px;
+            }
+        }
+
+        &.sm {
+            @include font-buttons-links-large-navigation-link;
+            padding: 10px 16px;
+            margin: 4px;
+            border: 3px solid $btn-action-bg;
+        }
+
+        &:hover {
+            background-color: $white;
+            box-shadow: none;
+            color: $color-text;
+            text-decoration: none;
+        }
+
+        &:focus, &:active {
+            background-color: white;
+            border: 3px solid #002419;
+            box-shadow: 0 0 0 3px $btn-action-bg;
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+        }
+
+        &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+            color: $color-text;
+            background-color: $btn-action-hover-bg;
+            border: 3px solid $btn-action-bg;
+            border-radius: 2px;
+            background: radial-gradient(circle, $btn-action-bg 10%, $btn-action-hover-bg 1%) 50% no-repeat;
+            background-size: 1020%;
+            transition: all .2s ease-in;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    &--outline {
+        @include font-buttons-links-large-navigation-link;
+        border-radius: 2px;
+        padding: 10px 25px;
+        /*margin: 4px;*/
+        color: $color-text;
+        border: 3px solid #0DA459;
+        background: #fff 50%;
+        background-size: 100%;
+        font-size: 18px;
+        line-height: 28px;
+        max-width: 100%;
+        text-align: center;
+
+        &:not(.sm) {
+            @include media-breakpoint-up(lg) {
+                @include font-buttons-links-link-text-large;
+                padding: 15px 30px;
+                /*margin: 6px;*/
+            }
+        }
+
+        &.sm {
+            @include font-buttons-links-large-navigation-link;
+            border-radius: 2px;
+            padding: 6px 16px;
+            margin: 4px;
+            color: $color-text;
+            border: 3px solid #0DA459;
+            background: #fff 50%;
+            background-size: 100%;
+        }
+
+        &:hover {
+            background-color: $btn-outline-hover-bg;
+            box-shadow: none;
+            color: inherit;
+            border-color: #0DA459;
+            text-decoration: none;
+        }
+
+        &:focus, &:active {
+            /*outline: none;
+            box-shadow: none;
+            border-color: $color-accent-highlight-decor;*/
+            background-color: $btn-outline-hover-bg;
+            border: 3px solid #002419;
+            box-shadow: 0 0 0 3px $btn-action-bg;
+        }
+
+        &::-moz-focus-inner {
+            border-color: $color-accent-highlight-decor;
+        }
+
+        &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+            color: inherit;
+            background-color: $btn-outline-hover-bg;
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, $btn-outline-hover-bg 1%) 50% no-repeat;
+            background-size: 1020%;
+            transition: all .2s ease-in;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+/*indicators*/
+.btn--action,
+.btn--outline,
+a {
+    &.plus {
+        &:before {
+            content: '';
+            background-image: url('../../images/layout/plus.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin: 0 15px -3px 0;
+        }
+    }
+
+    &.download {
+        &:before {
+            content: '';
+            background-image: url('../../images/download-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin: 0 15px -3px 0;
+        }
+    }
+
+    &.filter {
+        &:before {
+            content: '';
+            background-image: url('../../images/filter-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin: 0 15px -3px 0;
+        }
+    }
+
+    &.facebook {
+        border: 3px solid #1877F2;
+
+        &:before {
+            content: '';
+            background-image: url("../../images/facebook-dark.svg");
+            background-size: 20px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 15px -3px 0;
+        }
+
+        &:focus, &:active {
+            background-color: rgba(0,36,25,0.15);
+        }
+
+        &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+            color: inherit;
+            background-color: rgba(0,36,25,0.15);
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, rgba(0,36,25,0.15) 1%) 50% no-repeat;
+            background-size: 1020%;
+            transition: all .2s ease-in;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    &.twitter {
+        border: 3px solid #1DA1F2;
+
+        &:before {
+            content: '';
+            background-image: url("../../images/twitter-dark.svg");
+            background-size: 20px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 15px -3px 0;
+        }
+
+        &:focus, &:active {
+            background-color: rgba(0,36,25,0.15);
+        }
+
+        &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+            color: inherit;
+            background-color: rgba(0,36,25,0.15);
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, rgba(0,36,25,0.15) 1%) 50% no-repeat;
+            background-size: 1020%;
+            transition: all .2s ease-in;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+a, div {
+    &.plus {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &.download {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &.facebook {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &.twitter {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &.filter {
+        border: 0;
+        box-shadow: none;
+    }
+
+    &.btn--action {
+        box-shadow: none;
+        cursor:pointer;
+
+        &:hover {
+            border: 3px solid $btn-action-bg;
+        }
+    }
+
+    &.btn--outline {
+        box-shadow: none;
+        display: inline-block;
+        cursor:pointer;
+
+        &:focus, &:active {
+            background-color: $btn-outline-hover-bg;
+            border: 3px solid #002419 !important;
+            box-shadow: 0 0 0 3px $btn-action-bg;
+        }
+
+        &::-moz-focus-inner {
+            border-color: $color-accent-highlight-decor;
+        }
+
+        &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+            color: inherit;
+            background-color: $btn-outline-hover-bg;
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, $btn-outline-hover-bg 1%) 50% no-repeat;
+            background-size: 1020%;
+            transition: all .2s ease-in;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+a {
+    &.small-print {
+        @include animated-underline($color-default-link, 2px);
+        color: $color-default-link;
+    }
+}

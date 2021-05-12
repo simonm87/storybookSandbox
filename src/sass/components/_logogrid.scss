@@ -1,0 +1,27 @@
+﻿.logo-grid-row {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__item {
+        padding: 7.5px;
+
+        @include media-breakpoint-up(md) {
+            padding: 15px;
+        }
+
+        &__container {
+            border: 1px solid rgba(0, 36, 25, 0.2);
+        }
+    }
+}
+
+    .logo-4-col-offset {
+        @include media-breakpoint-up(lg) {
+            margin-left: 12.3333%;
+        }
+    }

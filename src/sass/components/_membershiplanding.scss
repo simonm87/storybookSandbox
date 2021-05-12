@@ -1,0 +1,240 @@
+﻿.card-deck .membership__card {
+    
+    //IE Fixes
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background-color: $color-primary-action-background;
+    }
+
+    @include media-breakpoint-up(sm) {
+        /*flex: 0 0 calc(100% - 30px);*/
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: calc(100% - 30px);
+    }
+
+    @include media-breakpoint-up(md) {
+        /*flex: 0 0 calc(50% - 30px);*/
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: calc(50% - 30px);
+        //IE Fixes
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            flex-basis: calc(50% - 40px);
+        }
+    }
+}
+
+    .membership-card-deck {
+        @extend .card-deck;
+
+        //IE Fixes
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            width: 100% !important;
+        }
+
+        margin-left: 15px;
+        margin-right: 15px;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        @include media-breakpoint-up(md) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+.membership {
+    @extend .row;
+
+    &__card {
+        @extend .card;
+        //IE Fixes
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: block !important;
+        }
+
+        margin-bottom: 15px !important;
+        margin-top: 15px !important;
+        display: flex;
+        position: relative;
+
+        &--body {
+            padding: 1.5rem;
+            background-color: $color-primary-action-background;
+            color: #fff;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-direction: column;
+
+            @include media-breakpoint-up(lg) {
+                padding: 3rem;
+            }
+
+            &--title {
+                @include font-heading-small-devices-m-heading;
+                padding-bottom: 0.5rem;
+                line-height: 1.15;
+
+                @include media-breakpoint-up(lg) {
+                    @include font-heading-xl-devices-m-heading;
+                    @include sc-spacing(padding-bottom);
+                }
+            }
+
+            &--price {
+                @include sc-spacing(padding-bottom);
+                font-family: $font-family-andeslight;
+                font-size: 18px;
+                margin-bottom: 4.5rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 5.5rem;
+                    font-size: 20px;
+                }
+
+                & span {
+                    font-family: $font-family-andesbold;
+                }
+            }
+
+            &--button-row {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 1.5rem;
+                width: calc(100% - 3rem);
+
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 3rem;
+                    @include sc-spacing(margin-top);
+                    width: calc(100% - 6rem);
+                }
+
+                &--btn-one {
+
+                    @extend .btn--action;
+                    padding: .375rem 1rem;
+                    font-size: 1rem;
+                    margin: 0px 0px 3px 0px !important;
+                    display: block;
+                    text-align: center;
+
+                    @media only screen and (min-width: 359px) {
+                        display: inline-block;
+                        margin: 0 !important;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        padding: .375rem .75rem;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 18px 22px !important;
+                        font-size: 18px;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        padding: 18px 30px !important;
+                    }
+                }
+
+                &--btn-two {
+                    @extend .btn--action;
+                    padding: .375rem 1rem;
+                    font-size: 1rem;
+                    margin: 0 !important;
+                    display: block;
+                    text-align: center;
+
+                    @media only screen and (min-width: 359px) {
+                        display: inline-block;
+                        margin-left: 10px !important;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        padding: .375rem .75rem;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 18px 22px !important;
+                        font-size: 18px;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        padding: 18px 30px !important;
+                    }
+                }
+
+                &--btn-gift {
+                    @extend .btn--outline;
+                    color: #fff;
+                    display: block;
+                    text-align: center !important;
+                    //float: right;
+                    padding-top: 6px !important;
+                    padding-bottom: 6px !important;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    background-color: transparent;
+                    border-color: #2F3061;
+                    line-height: 28px !important;
+                    @include font-buttons-links-link-text-small;
+                    margin: 0 !important;
+
+                    @media only screen and (min-width: 359px) {
+                        display: inline-block;
+                        float: right;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        padding-left: .75rem;
+                        padding-right: .75rem;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 18px 22px !important;
+                        font-size: 18px;
+                        line-height: 22px !important;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        padding: 18px 30px !important;
+                    }
+
+                    &:hover, &:active, &:focus {
+                        border-color: #2F3061;
+                        background-color: #2F3061;
+                    }
+
+                    &:before {
+                        content: '';
+                        background-image: url("../../images/gift-icon-green.svg");
+                        background-size: 20px;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 15px -3px 0;
+                    }
+
+                    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+                        color: inherit;
+                        background-color: #2F3061;
+                        background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, #2F3061 1%) 50% no-repeat;
+                        background-size: 1020%;
+                        transition: all .2s ease-in;
+                        box-shadow: none;
+                        outline: none;
+                    }
+
+                    &:focus {
+                        box-shadow: 0 0 0 3px $btn-action-bg;
+                    }
+                }
+            }
+        }
+    }
+}
+
+h2.membership__card--body--title {
+    margin-bottom: 0; 
+}

@@ -1,0 +1,122 @@
+﻿/*wood page*/
+.woodgroup__page {
+
+    & > section {
+        @extend .woodland-trust-spacing;
+    }
+
+    h4.subheader {
+        text-align: center;
+    }
+    /*#features {
+        margin-top: 30px;
+    }*/
+    .woods-features {
+        @extend .bulleted-list;
+    }
+
+    ul.woods-features li {
+        @include font-paragraph-xl-devices-paragraph-text;
+        /*font-weight: bold;*/
+    }
+
+    ul.woods-names {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    ul.woods-names li {
+        color: #167f5f;
+        list-style: none;
+        display: inline;
+    }
+
+    ul.woods-names li:after {
+        content: " \2022 ";
+        word-spacing: 2em;
+    }
+
+    ul.woods-names li:last-child:after {
+        content: none;
+    }
+
+    .page__header__topspacer {
+        margin-top: 30px;
+    }
+
+    .page__header__spacer {
+        margin-bottom: 20px;
+    }
+
+    .page__header__woodowner > p {
+        font-size: 0.75em;
+        line-height: 1.125rem;
+        text-align: left;
+        font-style: normal;
+        font-family: "AndesMedium";
+        text-align: center;
+        color: #167f5f;
+    }
+
+    .page__header__woodfeatures > h2 {
+        margin-bottom: 1rem;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .woods-map-link > a {
+        /*color: #002419;
+        text-decoration: underline;
+        text-decoration-color: #167f5f;*/
+        @extend .underline-link;
+        @include font-paragraph-xl-devices-paragraph-text;
+        font-weight: bold;
+        font-family: Andes;
+    }
+
+    .quick-facts {
+        @include m-spacing(margin-bottom);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+        padding-right:2.5em;
+
+        p {
+            @include font-paragraph-xl-devices-paragraph-text;
+            margin-bottom: 1rem;
+        }
+
+        &__wood-header {
+            @include font-paragraph-xl-devices-paragraph-text;
+            font-weight: 300;
+            font-family: AndesMedium;
+            /*margin-bottom: 1rem;*/
+        }
+    }
+    // woods management plan card
+    /*.management-plan {
+        h2 {
+            @include font-heading-xl-devices-s-heading();
+        }
+
+        .excerpt-list-card__row {
+
+
+            &:hover {
+                box-shadow: none;
+
+                img {
+                    transform: none;
+                }
+            }
+        }
+    }*/
+}
+
+.wood-gallery {
+    @extend .woodland-trust-spacing;
+}

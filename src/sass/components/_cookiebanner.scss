@@ -1,0 +1,28 @@
+﻿.cookie-policy-link {
+    color: white !important;
+
+    &:hover {
+        background-color: #0da459 !important;
+    }
+
+    &:focus {
+        background-color: #99eac2;
+    }
+}
+
+.cc-compliance a {
+    border: 3px solid $btn-action-bg !important;
+
+    &:hover {
+        background-color: $white !important;
+        box-shadow: none !important;
+        color: $color-text !important;
+        text-decoration: none !important;
+    }
+
+    &:focus, &:active {
+        background-color: white !important;
+        border: 3px solid #002419 !important;
+        box-shadow: 0 0 0 3px $btn-action-bg !important;
+    }
+}

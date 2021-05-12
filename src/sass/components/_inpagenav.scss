@@ -1,0 +1,186 @@
+﻿.inpage-navs-container {
+    min-height: 44px; 
+
+    @include media-breakpoint-up(lg) {
+        height: 72px;
+    }
+}
+
+
+.inpage-navs {
+    $inpagenav: &;
+    @extend .navbar;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    display: block !important;
+    background-color: #FFFFFF;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+        display: flex !important;
+        text-align: center;
+        box-shadow: 0 1px 0 0 #E8E8E8;
+    }
+
+
+    &.navbar-fixed {
+        top: 0;
+        //z-index: 100;
+        z-index: 49;
+        position: fixed;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        animation: slideIn 0.3s ease-in;
+
+        @include media-breakpoint-up(lg) {
+            animation: none;
+        }
+
+        @keyframes slideIn {
+            0% {
+                top: -44px;
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+
+
+        #{$inpagenav}__wrapper {
+            //box-shadow: 0 1px 0 0 #E8E8E8;
+            -webkit-box-shadow: 0 4px 25px 0 rgba(0,0,0,.2);
+            -moz-box-shadow: 0 4px 25px 0 rgba(0,0,0,.2);
+            box-shadow: 0 4px 25px 0 rgba(0,0,0,.2);
+
+            @include media-breakpoint-up(lg) {
+                box-shadow: none;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            & ul.navbar-nav {
+                padding-left: 15px;
+                display: block !important;
+                overflow: auto !important;
+                white-space: nowrap !important;
+
+                @include media-breakpoint-up(sm) {
+                    padding-left: calc((100vw - 540px)/2 + 15px);
+                }
+
+                @include media-breakpoint-up(md) {
+                    padding-left: calc((100vw - 720px)/2 + 15px);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    padding: 0;
+                }
+
+                & li {
+                    &:first-child {
+                        padding-left: 0;
+
+                        @include media-breakpoint-up(lg) {
+                            padding-left: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #{$inpagenav}__item {
+            /*-webkit-transition: all 5.5s ease;
+            -moz-transition: all 5.5s ease;
+            -ms-transition: all 5.5s ease;
+            -o-transition: all 5.5s ease;
+            transition: all 5.5s ease;*/
+            display: inline-block;
+            padding: 0 16px;
+            /*&__link {
+                padding: 24px 0 20px 0;
+            }*/
+        }
+    }
+
+
+    &__wrapper {
+        &:before {
+            display: block;
+            content: "On this page";
+            @include font-labels-reference-category-label;
+            @include lc-spacing(padding-bottom);
+            line-height: 18px;
+            color: $color-labels-reference;
+        }
+
+        @include media-breakpoint-up(lg) {
+            box-shadow: none;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        & ul {
+            @include media-breakpoint-up(lg) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__item {
+        @extend .nav-item;
+        padding: 0;
+        /*overflow: auto;*/
+        white-space: nowrap;
+        /*-webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;*/
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+            height: 72px;
+            padding: 0 16px;
+        }
+
+        &__link {
+            @extend .nav-link;
+            @include font-paragraph-small-devices-paragraph-text;
+            color: $color-text;
+            font-family: 'AndesBold';
+            display: inline-block;
+            border-bottom: 4px solid transparent;
+
+            @include media-breakpoint-up(lg) {
+                padding: 24px 0 20px 0;
+            }
+
+            &:hover {
+                color: #002419;
+            }
+
+            &.current, a.current {
+                text-decoration: none;
+                border-bottom: 4px solid #0DA459;
+                transition: all 0.3s ease;
+                transform: translate3d(0, 0, 0);
+                transform-style: preserve-3d;
+                -webkit-backface-visibility: hidden;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                transition: all .5s ease;
+
+                &:hover {
+                    color: #002419;
+                }
+            }
+        }
+    }
+}

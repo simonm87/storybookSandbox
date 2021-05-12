@@ -1,0 +1,72 @@
+﻿/*styles for editor previews*/
+
+.nav-preview-container {
+    max-width: 1140px;
+
+    .nav-cta--lg.cta-card {
+        height: 330px;
+    }
+
+    .nav-cta--lg.task-card {
+        height: 330px;
+    }
+
+    .navCardImage {
+        height: auto;
+    }
+
+    .nav-cta {
+        height: auto;
+    }
+    
+    .col-9,.col-3 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navCardImageWrapper {
+        max-width: 69%;
+        flex: 0 0 69%;
+
+        .navCardImage--lg {
+            width: 100%;
+        }
+    }
+
+    .navCardContentWrapper {
+        margin: auto;
+    }
+}
+
+.preview-row {
+    .soft-action {
+        background-color: #00023f;
+
+        .ctacard__body {
+            color: #fff;
+        }
+    }
+
+    .card-container {
+        width: 540px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-md-4 .card-container {
+        width: 350px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-md-6, .col-md-4 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.preview-header {
+    h2 {
+        padding-top: 2rem;
+    }
+}

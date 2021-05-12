@@ -1,0 +1,36 @@
+﻿.column-6 {
+    .heading {
+        @extend .col-12;
+
+        h2, h3, f2, f3, p {
+            text-align: center;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        p:not(.lead) {
+            @include font-paragraph-small-devices-paragraph-text;
+
+            @include media-breakpoint-up(md) {
+                @include font-paragraph-xl-devices-paragraph-text;
+            }
+        }
+    }
+}
+
+.heading {
+    @extend .col-md-6;
+
+    h2, h3, f2, f3, p {
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    p:not(.lead) {
+        @include font-paragraph-small-devices-paragraph-text;
+
+        @include media-breakpoint-up(md) {
+            @include font-paragraph-xl-devices-paragraph-text;
+        }
+    }
+}

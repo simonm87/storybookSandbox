@@ -1,0 +1,664 @@
+﻿//Donate payment component
+
+.accordion {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    p {
+        @include font-paragraph-small-devices-paragraph-text;
+    }
+
+    h3 {
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+
+
+        &:active {
+            background-color: $color-primary-action-background;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: $color-primary-action-background;
+            color: white;
+        }
+    }
+
+    &__trigger {
+        padding-left: 20px;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 44px;
+        }
+
+        &[aria-expanded="true"] .accordion__trigger--title--icon {
+            transform: translateY(-50%) rotate(-135deg);
+            border-color: #0DA459;
+        }
+
+        &[aria-expanded="true"] {
+            background-color: $color-primary-action-background;
+            color: $white;
+            border-left: solid 4px #0DA459;
+        }
+
+        &[aria-expanded="false"] {
+            background-color: $white;
+        }
+
+        background: none;
+        color: hsl(0, 0%, 13%);
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        outline: none;
+        border-left: solid 4px #9B9B9B;
+        background-color: $white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-primary-action-background;
+            color: white;
+            border-left: solid 4px #0DA459;
+
+
+            &--title {
+                &--icon {
+                    border-color: green;
+                }
+            }
+        }
+
+        &--title {
+            @include font-buttons-links-link-text-large;
+            pointer-events: none;
+            border: transparent 2px solid;
+            border-radius: 5px;
+            padding: 0.25em;
+            outline: none;
+
+            h3 {
+                @include font-heading-small-devices-s-heading;
+                font-size: 22px;
+                line-height: 24px;
+
+                @include media-breakpoint-up(xl) {
+                    @include font-heading-xl-devices-s-heading;
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+            }
+
+            p {
+                font-family: $font-family-andesmedium;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &--icon {
+                border: solid #786F6F;
+                border-width: 0 3px 3px 0;
+                height: 16px;
+                pointer-events: none;
+                position: absolute;
+                right: 2em;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                width: 16px;
+
+                &:active,
+                &:hover {
+                    border-color: green;
+                }
+            }
+        }
+    }
+
+    & > * + * {
+        border-top: none;
+    }
+
+    & *:first-child .accordion__trigger {
+        /*border-radius: 5px 5px 0 0;*/
+    }
+
+
+    &__panel {
+        @include s-spacing(padding);
+        padding-bottom: 6.5rem !important;
+        margin: 0;
+        background-color: $white;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 8rem !important;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+        }
+
+        &[hidden] {
+            /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+            display: none;
+        }
+
+        &--btn {
+            float: right;
+            margin-top: 1.5em !important;
+            margin-bottom: 0 !important;
+        }
+
+        & fieldset {
+            border: 0;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        &--amount-label {
+            label {
+                @include font-labels-reference-form-field-label;
+            }
+
+            margin-bottom: 0;
+        }
+
+        &__amount {
+            position: relative;
+
+            i {
+                position: absolute;
+                display: block;
+                transform: translate(0, -50%);
+                left: em(8);
+                pointer-events: none;
+                text-align: center;
+                font-style: normal;
+                font-size: 2em !important;
+                font-family: $font-family-andesbold !important;
+                bottom: -2px;
+            }
+
+            input.paymentField {
+                padding-left: 50px !important;
+                font-style: normal;
+                font-size: 2em !important;
+            }
+
+            &__placeholder {
+                position: absolute;
+                display: block;
+                right: 40px;
+                bottom: 18px;
+            }
+
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                text-align: right;
+                color: #002419;
+                font-size: 14px !important;
+                padding-bottom: 20px !important;
+                vertical-align: middle !important;
+            }
+
+            ::-moz-placeholder { /* Firefox 19+ */
+                text-align: right;
+                color: #002419;
+            }
+
+            :-ms-input-placeholder {
+                text-align: right;
+                color: #002419;
+            }
+
+            :-moz-placeholder {
+                text-align: right;
+                color: #002419;
+            }
+        }
+
+        &--persuasive-copy {
+            font-family: $font-family-andesmedium;
+        }
+    }
+
+    & button::-moz-focus-inner {
+        border: 0;
+    }
+}
+
+button {
+    border-style: none;
+}
+.accordion-trigger:focus .accordion-title {
+    border-color: hsl(216, 94%, 73%);
+}
+
+
+
+.accordion__trigger:focus .accordion__trigger--title--icon,
+.accordion__trigger:hover .accordion__trigger--title--icon {
+    border-color: #0DA459;
+}
+.paymentoptions {
+    margin-bottom: 0 !important;
+}
+
+#accordionGroup {
+    background-color: #fff;
+
+    .spacer {
+        display: block;
+        background-color: #f4f7f5;
+        height: 10px;
+    }
+}
+
+.show-validation #accordionGroup {
+    @include s-spacing(padding-top);
+}
+
+.summary-accordion {
+    @include m-spacing(margin-bottom);
+
+    &__trigger--title {
+        border-radius: 0 !important;
+        padding: 0 !important;
+        border: transparent 1px solid !important;
+
+        h4 {
+            @include font-buttons-links-link-text-large;
+            font-size: 14px;
+            padding-right:4em;
+            margin-top:0;
+
+            @media (min-width: 374px) {
+                font-size: 18px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .summary-accordion__trigger--title--icon {
+        transform: translateY(-20%) rotate(-135deg);
+        border-color: #0da459;
+    }
+
+    .accordion__trigger.collapsed .summary-accordion__trigger--title--icon {
+        transform: translateY(-70%) rotate(45deg);
+        border-color: #786f6f;
+    }
+
+    a:not(.collapsed) {
+        .panel-heading {
+            background: #00023f;
+            color: #fff;
+            border-left: solid 4px #0da459;
+
+            .summary-accordion__trigger--title--icon {
+                transform: translateY(-20%) rotate(-135deg);
+                border-color: #0da459;
+            }
+        }
+    }
+
+    padding: 0;
+    width: 100%;
+
+    p {
+        font-size: 14px;
+    }
+
+    h3 {
+        padding: 0;
+        margin-bottom: 0;
+
+        &:active {
+            background-color: $color-primary-action-background;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: $color-primary-action-background;
+            color: white;
+        }
+    }
+
+    &__trigger {
+        &[aria-expanded="true"] .accordion__trigger--title--icon {
+            transform: translateY(-20%) rotate(-135deg);
+            border-color: #0DA459;
+        }
+
+        &[aria-expanded="true"] {
+            background-color: $color-primary-action-background;
+            color: $white;
+            border-left: solid 4px #0DA459;
+        }
+
+        &[aria-expanded="false"] {
+            background-color: $white;
+        }
+
+        background: none;
+        color: hsl(0, 0%, 13%);
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        outline: none;
+        border-left: solid 4px #9B9B9B;
+        background-color: $white;
+        padding-left: 20px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-primary-action-background;
+            color: white;
+            border-left: solid 4px #0DA459;
+
+
+            &--title {
+                &--icon {
+                    border-color: green;
+                }
+            }
+        }
+
+        &--title {
+            @include font-buttons-links-link-text-large;
+            pointer-events: none;
+            border: transparent 2px solid;
+            border-radius: 5px;
+            padding: 0.25em;
+            outline: none;
+
+            p {
+                font-family: $font-family-andesmedium;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &--icon {
+                border: solid #786F6F;
+                border-width: 0 3px 3px 0;
+                height: 16px;
+                pointer-events: none;
+                position: absolute;
+                right: 2em;
+                top: 50%;
+                transform: translateY(-70%) rotate(45deg);
+                width: 16px;
+
+                &:active,
+                &:hover {
+                    border-color: green;
+                }
+            }
+        }
+    }
+
+    & > * + *:not(.spacer) {
+        border-top: none;
+    }
+
+    & *:first-child .accordion__trigger {
+        /*border-radius: 5px 5px 0 0;*/
+    }
+
+
+    &__panel {
+        margin: 0;
+        padding: 2em 2em;
+        background-color: $white;
+
+        h4 {
+            margin-bottom: 1em;
+        }
+
+        &[hidden] {
+            /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+            display: none;
+        }
+
+        &--btn {
+            float: right;
+            margin-right: 0 !important;
+            margin-top: 1.5em !important;
+            margin-bottom: 0 !important;
+
+            &:focus {
+                background-color: #ffdd51;
+            }
+        }
+
+        & fieldset {
+            border: 0;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        &--amount-label {
+            font-size: 16px !important;
+            font-family: $font-family-andesbold;
+            margin-bottom: 0;
+        }
+
+        &__amount {
+            position: relative;
+
+            i {
+                position: absolute;
+                display: block;
+                transform: translate(0, -50%);
+                left: em(8);
+                pointer-events: none;
+                text-align: center;
+                font-style: normal;
+                font-size: 2em !important;
+                font-family: $font-family-andesbold !important;
+                bottom: -2px;
+            }
+
+            input.paymentField {
+                padding-left: 50px !important;
+                font-style: normal;
+                font-size: 2em !important;
+            }
+
+            &__placeholder {
+                position: absolute;
+                display: block;
+                right: 40px;
+                bottom: 18px;
+            }
+
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                text-align: right;
+                color: $color-text;
+                font-size: 14px !important;
+                padding-bottom: 20px !important;
+                vertical-align: middle !important;
+            }
+
+            ::-moz-placeholder { /* Firefox 19+ */
+                text-align: right;
+                color: $color-text;
+            }
+
+            :-ms-input-placeholder {
+                text-align: right;
+                color: $color-text;
+            }
+
+            :-moz-placeholder {
+                text-align: right;
+                color: $color-text;
+            }
+        }
+
+        &--persuasive-copy {
+            font-family: $font-family-andesmedium;
+        }
+    }
+
+    & button::-moz-focus-inner {
+        border: 0;
+    }
+
+    & .accordion__panel {
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+
+
+//Accordion component
+
+
+.accordion-wt-tabs {
+    //@extend .accordion;
+    overflow: hidden;
+
+    &__trigger--title--icon {
+        border: solid #786F6F;
+        border-width: 0 3px 3px 0;
+        height: 14px;
+        pointer-events: none;
+        position: absolute;
+        right: 30px;
+        transform: translateY(-50%) rotate(45deg);
+        width: 14px;
+        margin-top: 7px;
+
+        &:hover,
+        &:focus {
+            color: $color-text;
+        }
+    }
+
+    .tab-pane {
+        animation-duration: 2s;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+    //Accordion
+    .card {
+        border: none;
+
+        .card-header {
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+            .nav-link {
+                @include lc-spacing(padding);
+                border: none;
+                background-color: $color-light-background;
+                margin: 4px;
+                width: 98%;
+                //margin-bottom: 10px;
+                border-radius: 0;
+                border-left: 4px solid #786F6F;
+                color: $color-text;
+                font-family: AndesBold;
+                font-size: 18px;
+                line-height: 22px;
+                text-align: left;
+                padding-right: 68px !important;
+                display: flex;
+                align-items: center;
+
+                span {
+                    vertical-align: middle !important;
+                }
+
+                &:hover {
+                    border-color: #786F6F;
+                    cursor: pointer;
+                    border-left: 4px solid $color-text;
+                    background-color: $btn-outline-hover-bg;
+
+                    & .accordion-wt-tabs__trigger--title--icon {
+                        border-color: $color-text;
+                    }
+                }
+
+                &:focus {
+                    border: 4px solid $color-text;
+                    box-shadow: 0 0 0 4px $btn-action-bg;
+                    outline: none;
+                    border-left: 4px solid $color-text;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    & .accordion-wt-tabs__trigger--title--icon {
+                        border-color: $color-text;
+                    }
+                }
+
+
+                &[aria-expanded="true"] {
+                    border-left: 4px solid $color-accent-highlight-decor;
+                    color: $color-text;
+
+                    &:focus,
+                    &:hover {
+                        border-left: 4px solid $color-text;
+
+                        & .accordion-wt-tabs__trigger--title--icon {
+                            border-color: $color-text;
+                        }
+                    }
+                }
+
+                &[aria-expanded="true"] .accordion-wt-tabs__trigger--title--icon {
+                    transform: translateY(-50%) rotate(-135deg);
+                    border-color: $color-accent-highlight-decor;
+                }
+            }
+        }
+
+        .card-body {
+            @include lc-spacing(padding);
+            flex-grow: 1;
+            padding: 1rem;
+
+            @include media-breakpoint-up(md) {
+                padding: 1.5rem;
+            }
+        }
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+        /*color: $color-text;*/
+        color: $color-text;
+        border: none;
+        background-color: $color-light-background;
+        border-left: 4px solid $color-accent-highlight-decor;
+    }
+
+    .nav-tabs {
+        display: none;
+    }
+
+    .tab-pane {
+        display: block !important;
+        opacity: 1;
+        margin-bottom: 1rem;
+    }
+}
+

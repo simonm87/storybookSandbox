@@ -1,0 +1,12 @@
+﻿/*video page specific styles*/
+
+.video__page {
+    .embed-responsive {
+        margin-top: 0;
+        @include m-spacing(margin-bottom);
+    }   
+
+    .page__header_detail {
+        margin-bottom: 1.5rem;
+    }
+}

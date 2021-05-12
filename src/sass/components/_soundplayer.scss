@@ -1,0 +1,275 @@
+﻿@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+.green-audio-player {
+    @include lc-spacing(padding-top, padding-bottom);
+    @include lc-spacing(padding-left, padding-right);
+    min-width: 320px;
+    height: 73px;
+    margin-bottom: 30px;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff
+}
+
+.green-audio-player img, .green-audio-player svg {
+    display: block
+}
+
+.green-audio-player .play-pause-btn {
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+}
+
+.green-audio-player .play-pause-btn path {
+    fill: #002419;
+}
+
+.green-audio-player .loading .loading__spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #b0b0b0;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spin .4s linear infinite;
+    animation: spin .4s linear infinite
+}
+
+.green-audio-player .slider {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    background-color: rgba(0,36,25,0.1);
+    cursor: pointer;
+    position: relative;
+}
+
+.green-audio-player .slider .gap-progress {
+    background-color: #0DA459;
+    border-radius: inherit;
+    position: absolute;
+    pointer-events: none;
+    //width: 28px;
+}
+
+.green-audio-player .slider .gap-progress .pin {
+    height: 28px;
+    width: 28px;
+    border-radius: 14px;
+    background-color: #0DA459;
+    position: absolute;
+    pointer-events: all;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    border: 4px solid #FFFFFF;
+    padding: 0;
+}
+
+.green-audio-player .controls {
+    @include lc-spacing(margin-left, margin-right);
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    color: #55606e;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.controls__current-time {
+    font-family: Arial;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    color: #002419;
+    text-shadow: 0 0 2px 0 rgba(0,0,0,0.5);
+}
+
+.controls__total-time {
+    font-family: Arial;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    color: #002419;
+    text-shadow: 0 0 2px 0 rgba(0,0,0,0.5);
+    text-align: right;
+}
+
+.green-audio-player .controls .controls__slider {
+    @include lc-spacing(margin-left, margin-right);
+    border-radius: 5px;
+    height: 10px;
+    background-color: rgba(0,36,25,0.1);
+}
+
+.green-audio-player .controls .controls__slider .controls__progress {
+    width: 0;
+    height: 100%
+}
+
+.green-audio-player .controls .controls__slider .controls__progress .progress__pin {
+    right: -14px;
+    top: -10px
+}
+
+.green-audio-player .controls span {
+    cursor: default
+}
+
+.green-audio-player .volume {
+    position: relative;
+    min-width: 24px;
+}
+
+.green-audio-player .download {
+    display: none;
+}
+
+.green-audio-player .volume .volume__button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+}
+
+.green-audio-player .volume .volume__button path {
+    fill: #002419;
+}
+
+.green-audio-player .volume .volume__button.open {
+    position: absolute;
+    z-index: 999;
+    bottom: -12px;
+    left: -0px;
+}
+
+.green-audio-player .volume .volume__button.open path {
+    fill: #002419;
+}
+
+.green-audio-player .volume .volume__controls {
+    width: 48px;
+    height: 220px;
+    background-color: #F4F7F5;
+    border-radius: 24px;
+    position: absolute;
+    left: -12px;
+    bottom: -24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2;
+}
+
+.green-audio-player .volume .volume__controls.hidden {
+    display: none
+}
+
+.green-audio-player .volume .volume__controls.top {
+    left: -12px;
+    bottom: -24px;
+}
+
+.green-audio-player .volume .volume__controls.middle {
+    left: -12px;
+    bottom: -24px;
+}
+
+.green-audio-player .volume .volume__controls.bottom {
+    left: -12px;
+    bottom: -24px;
+}
+
+.green-audio-player .volume .volume__controls .volume__slider {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    width: 10px;
+    border-radius: 5px;
+}
+
+.green-audio-player .volume .volume__controls .volume__slider .volume__progress {
+    bottom: 0;
+    height: 100%;
+    width: 10px;
+}
+
+.green-audio-player .volume .volume__controls .volume__slider .volume__progress .volume__pin {
+    left: -9px;
+    top: -14px
+}
+
+
+.audio-caption {
+    @include font-labels-reference-meta-caption-breadcrumb;
+    text-align: center;
+    color: #002419;
+    margin: 0;
+}
+
+.audio-source {
+    @include font-labels-reference-small-print;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: all .3s ease;
+        transform: translate3d(0,0,0);
+        transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden !important;
+        color: #0d6eb7 !important;
+        box-shadow: inset 0 -1px 0 #0d6eb7;
+    }
+}

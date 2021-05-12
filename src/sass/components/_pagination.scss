@@ -1,0 +1,130 @@
+﻿.pagination {
+    @include s-spacing(margin-top);
+    @include s-spacing(margin-bottom);
+    @include font-buttons-links-link-text-large;
+
+    & li {
+        padding:15px 0 !important;
+    }
+}
+
+.page-item {
+    color: #002419;
+    margin: 5px;
+
+    &.active {
+        & .page-link {
+            background-color: #fff;
+            border-color: #0DA459;
+            color: #002419;
+            border-radius: 2px;
+        }
+    }
+
+    &.next {
+        margin-left: 2rem;
+
+        & .page-link {
+            border: 3px solid #0DA459;
+            border-radius: 2px;
+            padding: 1rem 1.5rem;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &.previous {
+        margin-right: 2rem;
+
+        & .page-link {
+            border: 3px solid #0DA459;
+            border-radius: 2px;
+            padding: 1rem 1.5rem;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.page-link {
+    color: #002419;
+    border: 3px solid #fff;
+    width: 57px;
+    height: 54px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    line-height: 1rem;
+
+    &:hover {
+        background-color: #99eac2;
+        color: #002419;
+        border-color: #0DA459;
+    }
+
+    &:focus {
+        background-color: #99eac2;
+        color: #002419;
+        border-color: #002419;
+        box-shadow: 0 0 0 3px #ffcb05;
+    }
+}
+
+
+/*Map datalist vuejs pagination*/
+.paging {
+    .paging-content {
+
+        .pagination {
+            display: flex;
+            display: -webkit-flex; /* Safari 6.1+ */
+        }
+
+        .page-item {
+            .page-link {
+                width: 57px;
+            }
+        }
+
+        .page-item.disabled {
+            display: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .page-item:first-child {
+            display: none;
+        }
+
+        @include media-breakpoint-down(md) {
+            .page-item:not(.active):not(:nth-child(2)):not(:nth-last-child(2)) {
+                display: none;
+            }
+        }
+
+        //Previous button
+        .page-item:nth-child(2) {
+            margin-right: 2rem;
+
+
+            .page-link {
+                width: 124px;
+                border: 3px solid #0da459;
+            }
+        }
+        //Next button
+        .page-item:nth-last-child(2) {
+            order: +1;
+            margin-left: 2rem;
+
+            .page-link {
+                width: 92px;
+                border: 3px solid #0da459;
+            }
+        }
+    }
+}
+
+.blog__listing__content:not(:first-child) {
+    padding-top: 15px;
+}

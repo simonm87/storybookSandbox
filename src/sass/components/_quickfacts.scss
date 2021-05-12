@@ -1,0 +1,31 @@
+﻿.quick-facts {
+    /*padding: 0 em(24);*/
+    padding-left: em(24);
+    border-left: 4px solid $color-stats-facts-data;
+
+
+    .heading {
+        @extend h3;
+        font-size: em(24);
+        @include font-heading-small-devices-xs-heading;
+        margin-top: 0;
+        padding-left: 0px;
+        max-width: 100%;
+        @include media-breakpoint-up(md) {
+            @include font-heading-xl-devices-xs-heading;
+        }
+    }
+
+    .fact {
+        @include lc-spacing(margin-top);
+        @include lc-spacing(margin-bottom);
+    }
+}
+
+.column-3 .quick-facts {
+    @include m-spacing(margin-bottom);
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,306 @@
+﻿$icomoon-font-family: "SystemIcons" !default;
+$icomoon-font-path: "/css/fonts" !default;
+
+$wt-icon-d_rotation: "\e84d";
+$wt-icon-ac_unit: "\eb3b";
+$wt-icon-access_alarms: "\e191";
+$wt-icon-accessibility: "\e84e";
+$wt-icon-accessible: "\e914";
+$wt-icon-account_balance: "\e84f";
+$wt-icon-account_balance_wallet: "\e850";
+$wt-icon-account_box: "\e851";
+$wt-icon-account_circle: "\e853";
+$wt-icon-adb: "\e60e";
+$wt-icon-add: "\e145";
+$wt-icon-add_a_photo: "\e439";
+$wt-icon-alarm_add: "\e856";
+$wt-icon-add_alert: "\e003";
+$wt-icon-add_box: "\e146";
+$wt-icon-add_circle: "\e147";
+$wt-icon-control_point: "\e3ba";
+$wt-icon-add_location: "\e567";
+$wt-icon-add_shopping_cart: "\e854";
+$wt-icon-queue: "\e03c";
+$wt-icon-add_to_queue: "\e05c";
+$wt-icon-adjust: "\e39e";
+$wt-icon-airline_seat_flat: "\e630";
+$wt-icon-airline_seat_flat_angled: "\e631";
+$wt-icon-airline_seat_individual_suite: "\e632";
+$wt-icon-airline_seat_legroom_extra: "\e633";
+$wt-icon-airline_seat_legroom_normal: "\e634";
+$wt-icon-airline_seat_legroom_reduced: "\e635";
+$wt-icon-airline_seat_recline_extra: "\e636";
+$wt-icon-airline_seat_recline_normal: "\e637";
+$wt-icon-flight: "\e539";
+$wt-icon-airplanemode_inactive: "\e194";
+$wt-icon-airplay: "\e055";
+$wt-icon-airport_shuttle: "\eb3c";
+$wt-icon-alarm_off: "\e857";
+$wt-icon-alarm_on: "\e858";
+$wt-icon-album: "\e019";
+$wt-icon-all_inclusive: "\eb3d";
+$wt-icon-all_out: "\e90b";
+$wt-icon-android: "\e859";
+$wt-icon-announcement: "\e85a";
+$wt-icon-apps: "\e5c3";
+$wt-icon-archive: "\e149";
+$wt-icon-arrow_back: "\e5c4";
+$wt-icon-arrow_downward: "\e5db";
+$wt-icon-arrow_drop_down: "\e5c5";
+$wt-icon-arrow_drop_down_circle: "\e5c6";
+$wt-icon-arrow_drop_up: "\e5c7";
+$wt-icon-arrow_forward: "\e5c8";
+$wt-icon-arrow_upward: "\e5d8";
+$wt-icon-art_track: "\e060";
+$wt-icon-aspect_ratio: "\e85b";
+$wt-icon-poll: "\e801";
+$wt-icon-assignment: "\e85d";
+$wt-icon-assignment_ind: "\e85e";
+$wt-icon-assignment_late: "\e85f";
+$wt-icon-assignment_return: "\e860";
+$wt-icon-assignment_returned: "\e861";
+$wt-icon-assignment_turned_in: "\e862";
+$wt-icon-assistant: "\e39f";
+$wt-icon-flag: "\e153";
+$wt-icon-attach_file: "\e226";
+$wt-icon-attach_money: "\e227";
+$wt-icon-attachment: "\e2bc";
+$wt-icon-audiotrack: "\e3a1";
+$wt-icon-autorenew: "\e863";
+$wt-icon-av_timer: "\e01b";
+$wt-icon-backspace: "\e14a";
+$wt-icon-cloud_upload: "\e2c3";
+$wt-icon-battery_alert: "\e19c";
+$wt-icon-battery_charging_full: "\e1a3";
+$wt-icon-battery_std: "\e1a5";
+$wt-icon-battery_unknown: "\e1a6";
+$wt-icon-beach_access: "\eb3e";
+$wt-icon-beenhere: "\e52d";
+$wt-icon-block: "\e14b";
+$wt-icon-bluetooth: "\e1a7";
+$wt-icon-bluetooth_searching: "\e1aa";
+$wt-icon-bluetooth_connected: "\e1a8";
+$wt-icon-bluetooth_disabled: "\e1a9";
+$wt-icon-blur_circular: "\e3a2";
+$wt-icon-blur_linear: "\e3a3";
+$wt-icon-blur_off: "\e3a4";
+$wt-icon-blur_on: "\e3a5";
+$wt-icon-class: "\e86e";
+$wt-icon-turned_in: "\e8e6";
+$wt-icon-turned_in_not: "\e8e7";
+$wt-icon-border_all: "\e228";
+$wt-icon-border_bottom: "\e229";
+$wt-icon-border_clear: "\e22a";
+$wt-icon-border_color: "\e22b";
+$wt-icon-border_horizontal: "\e22c";
+$wt-icon-border_inner: "\e22d";
+$wt-icon-border_left: "\e22e";
+$wt-icon-border_outer: "\e22f";
+$wt-icon-border_right: "\e230";
+$wt-icon-border_style: "\e231";
+$wt-icon-border_top: "\e232";
+$wt-icon-border_vertical: "\e233";
+$wt-icon-branding_watermark: "\e06b";
+$wt-icon-brightness_1: "\e3a6";
+$wt-icon-brightness_2: "\e3a7";
+$wt-icon-brightness_3: "\e3a8";
+$wt-icon-brightness_4: "\e3a9";
+$wt-icon-brightness_low: "\e1ad";
+$wt-icon-brightness_medium: "\e1ae";
+$wt-icon-brightness_high: "\e1ac";
+$wt-icon-brightness_auto: "\e1ab";
+$wt-icon-broken_image: "\e3ad";
+$wt-icon-brush: "\e3ae";
+$wt-icon-bubble_chart: "\e6dd";
+$wt-icon-bug_report: "\e868";
+$wt-icon-build: "\e869";
+
+
+
+@font-face {
+    font-family: '#{$icomoon-font-family}';
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xiawhq') format('truetype'), url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xiawhq') format('woff'), url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xiawhq##{$icomoon-font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '#{$icomoon-font-family}' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 3em;
+}
+
+.wt-icon-arrow_forward,
+.wt-icon-android {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+
+    &:before {
+        content: $wt-icon-android;
+    }
+}
+
+.wt-icon-arrow_forward {
+    width: 1em;
+    height: 1em;
+}
+/*styles*/
+/*------------------------
+  change icon size
+-------------------------*/
+/* relative units */
+.icon-sm {
+    font-size: 0.8em;
+}
+
+.icon-lg {
+    font-size: 1.2em;
+}
+/* absolute units */
+.icon-16 {
+    font-size: 16px;
+}
+
+.icon-32 {
+    font-size: 32px;
+}
+/*----------------------------------
+  add a square/circle background
+-----------------------------------*/
+.icon-bg-square,
+.icon-bg-circle {
+    padding: 0.35em;
+    background-color: #eee;
+}
+
+.icon-bg-circle {
+    border-radius: 50%;
+}
+/*------------------------------------
+  use icons as list item markers
+-------------------------------------*/
+.icon-ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.icon-ul > li {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.icon-ul > li > .icon {
+    margin-right: 0.4em;
+    line-height: inherit;
+}
+/*------------------------
+  spinning icons
+-------------------------*/
+.icon-is-spinning {
+    -webkit-animation: icon-spin 2s infinite linear;
+    -moz-animation: icon-spin 2s infinite linear;
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes icon-spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+.icon-rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.icon-flip-y {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.icon-flip-x {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: scale(1, -1);
+    -moz-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+.icon-32.icon-colour {
+    color: red;
+}

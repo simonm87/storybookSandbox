@@ -1,0 +1,347 @@
+﻿/*carousel styles*/
+
+.gallery-container {
+    position: relative;
+}
+
+.gallery-btn {
+    position: absolute;
+    right: 31px;
+    margin-top: 20px;
+    z-index: 10;
+    line-height: 0px;
+    font-size: 10px;
+    cursor: pointer;
+    background: transparent;
+    color: #000000;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    box-shadow: 0 13px 18px 0 rgba(0,0,0,0.25);
+    border-radius: 100px;
+    text-align: center;
+    padding-right: 31px;
+
+    @include media-breakpoint-up(md) {
+        padding-right: 46px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &--open {
+        width: 100px;
+        height: 24px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+
+        @include media-breakpoint-up(md) {
+            width: 110px;
+            height: 32px;
+        }
+
+        &:focus .gallery-btn__close {
+            background-color: $btn-outline-hover-bg;
+            border: 3px solid #002419;
+            box-shadow: 0 0 0 3px $btn-action-bg;
+        }
+    }
+
+    &--close {
+        width: 100px;
+        height: 24px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+
+        &:focus .gallery-btn__close {
+            background-color: $btn-outline-hover-bg;
+            border: 3px solid #002419;
+            box-shadow: 0 0 0 3px $btn-action-bg;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: 110px;
+            height: 32px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        right: calc(((100% - (540px) + 30px) / 2) + 16px);
+        margin-top: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+        right: calc(((100% - (720px) + 30px) / 2) + 32px);
+        margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        right: calc(((100% - (960px) + 30px) / 2) + 32px);
+    }
+
+    @include media-breakpoint-up(xl) {
+        right: calc(((100% - (1140px) + 30px) / 2) + 32px);
+    }
+
+    &--small {
+        @include media-breakpoint-up(sm) {
+            right: calc(((100% - (540px) + 30px) / 2) + 16px);
+            margin-top: 20px;
+        }
+
+        @include media-breakpoint-up(md) {
+            right: calc(((100% - (720px) + 30px) / 2) + 32px);
+            margin-top: 40px;
+        }
+    }
+
+    &__label {
+        color: $color-text;
+        font-family: Andes;
+        font-size: 11px;
+        letter-spacing: 2px;
+        line-height: 18px;
+        //padding-right: 3px;
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: -4px;
+        height: 32px;
+        width: 32px;
+        background-color: #ffffff;
+        box-shadow: 0 13px 18px 0 rgba(0,0,0,.25);
+        border-radius: 50%;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            height: 48px;
+            width: 48px;
+            top: -8px;
+        }
+
+        &__icon {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 14.04px;
+            width: 13.85px;
+
+            @include media-breakpoint-up(md) {
+                height: 18.71px;
+                width: 18.47px;
+            }
+        }
+    }
+}
+
+.wt-gallery {
+    /*@include xs-spacing(margin-bottom);*/
+    & .slick-prev {
+        margin-top: -74px;
+    }
+
+    & .slick-next {
+        // (? + half image height) - half button height
+        margin-top: calc((-345px + 312px) - 24px);
+
+    }
+
+    &--small {
+        & .slick-prev {
+            margin-top: -66px;
+        }
+
+        & .slick-next {
+            margin-top: -66px;
+        }
+    }
+
+
+    &__slide {
+        height: 390px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include media-breakpoint-up(sm) {
+            height: 405px;
+        }
+
+        @include media-breakpoint-up(md) {
+            height: 505px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 640px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 740px;
+        }
+
+        &--small {
+            @include media-breakpoint-up(sm) {
+                height: 405px;
+            }
+
+            @include media-breakpoint-up(md) {
+                height: 505px;
+            }
+        }
+
+
+        &__image {
+            /*@include xs-spacing(margin-bottom);*/
+            color: #3498db;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 276px;
+            margin-left: 7.5px;
+            margin-right: 7.5px;
+            margin-bottom: 1.5rem; /*this is used to determine slide height. If this number changes, change it in calculateSliderHeight() in wtmain.js too*/
+            &--single {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            /*//Samsung Galaxy s8/s9/Note9
+            @media (min-width: 360px) {
+                height: 264px;
+                margin-left: 7.5px;
+                margin-right: 7.5px;
+            }
+
+            //iPhone 6/7/8
+            @media (min-width: 667px) {
+                height: 276px;
+                margin-left: 7.5px;
+                margin-right: 7.5px;
+            }*/
+            @include media-breakpoint-up(sm) {
+                height: 287px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            @include media-breakpoint-up(md) {
+                height: 388px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+                height: 523px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            @include media-breakpoint-up(xl) {
+                height: 624px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            &__small {
+
+                &--single {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                @include media-breakpoint-up(sm) {
+                    background-size: contain;
+                    height: 287px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                @include media-breakpoint-up(md) {
+                    height: 388px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    height: 388px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                //If it is a portrait image only scale the height
+                &--portrait {
+                    background-size: contain;
+                }
+            }
+        }
+
+        &__caption {
+            @include font-labels-reference-meta-caption-breadcrumb;
+            text-align: center;
+            color: $color-text;
+            /*line-height: 0;*/
+            margin: 0 auto 0 auto;
+            max-width: 90%;
+            padding-bottom: 4px;
+
+            @include media-breakpoint-up(md) {
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 50%;
+            }
+        }
+
+        &__credit {
+            @include font-labels-reference-small-print;
+            text-align: center;
+            color: $color-text;
+            margin-bottom: 0;
+            /*line-height: 1.75rem;*/
+        }
+    }
+}
+
+    .closed-state {
+        .slick-track > .slick-slide:not(.slick-active) {
+            opacity: 0;
+            visibility: hidden !important;
+        }
+
+        .slick-arrow {
+            opacity: 0;
+            visibility: hidden !important;
+        }
+
+        .wt-gallery__slide__image:hover {
+            cursor: pointer;
+        }
+
+        /*&:hover {
+            .slick-track > .slick-slide:not(.slick-active) {
+                opacity: .4;
+                visibility: initial !important;
+            }
+        }*/
+    }
+
+.slick-next-more, .slick-next, .slick-prev {
+    &:focus {
+        background-color: $btn-outline-hover-bg !important;
+        border: 3px solid #002419;
+        box-shadow: 0 0 0 3px $btn-action-bg;
+    }
+}

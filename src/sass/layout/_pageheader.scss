@@ -1,0 +1,560 @@
+﻿/*pageheader styles*/
+
+.page__header {
+    @include l-spacing(margin-top, margin-bottom);
+
+    h1 {
+        @include font-heading-small-devices-l-heading;
+        text-align: center;
+        @include lc-spacing(margin-bottom);
+
+        @include media-breakpoint-up(md) {
+            @include font-heading-xl-devices-l-heading;
+            text-align: center;
+        }
+    }
+
+    &--landing {
+        padding-bottom: 1.5rem !important;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 3rem !important;
+        }
+
+        h1 {
+            @include l-spacing(margin-bottom);
+        }
+
+        h3 {
+            @include font-heading-small-devices-xs-heading;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-up(md) {
+                @include font-heading-xl-devices-xs-heading;
+                text-align: center;
+            }
+        }
+    }
+
+    &--publication {
+        @include l-spacing(margin-top);
+        @include xs-spacing(margin-bottom);
+    }
+
+    &--findawood {
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 3rem !important;
+        }
+
+        h1 {
+            @include l-spacing(margin-bottom);
+        }
+    }
+
+    &--italic {
+        font-size: unset;
+        /*@include font-heading-small-devices-xs-heading();*/
+        font-size: 20px !important; //20px
+        line-height: 22px !important; //22px
+        @include lc-spacing(margin-bottom);
+        margin-top: .5rem;
+        color: #167F5F;
+        text-align: center;
+        display: block;
+        font-family: AndesBold !important;
+        font-weight: 400 !important;
+
+        @include media-breakpoint-up(md) {
+            /*@include font-heading-xl-devices-xs-heading();*/
+            font-size: 24px !important; //24px
+            line-height: 28px !important; //28px
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+
+    &_detail > div > p {
+        @include font-paragraph-small-devices-lead-text();
+        text-align: center;
+        color: $color-text;
+        line-height: 1.75rem;
+        /*@include lc-spacing(margin-bottom);*/
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            @include font-paragraph-xl-devices-lead-text();
+            margin-bottom: 0;
+            text-align: center;
+        }
+    }
+
+    &_blogdate > p {
+        @include font-labels-reference-meta-caption-breadcrumb();
+        text-align: center;
+        color: $wt-green;
+    }
+
+    &_eventdate > p {
+        @include font-labels-reference-meta-caption-breadcrumb();
+        text-align: center;
+        color: $wt-green;
+    }
+
+    &_image > img {
+        @include s-spacing(margin-top);
+        max-height: 50px;
+        max-width: 50px;
+        margin-bottom: 1rem;
+        border-radius: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include sc-spacing(margin-bottom);
+
+        @include media-breakpoint-up(md) {
+            max-height: 100px;
+            max-width: 100px;
+        }
+    }
+
+    &_author > p {
+        text-align: center;
+        margin: 0;
+        color: $color-text;
+        font-family: $font-family-andesbold;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &_role > p {
+        text-align: center;
+        color: $color-labels-reference;
+        font-family: $font-family-andesmedium;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 0;
+    }
+
+    &_woodname > p {
+        @include font-sub-heading-xl-devices-s-sub-heading();
+        margin: 0;
+        text-align: center;
+        color: $color-text;
+        margin-top: 1.5rem;
+    }
+
+    &_location > p {
+        @include font-labels-reference-meta-caption-breadcrumb();
+        text-align: center;
+        color: $color-labels-reference;
+        margin: 0;
+    }
+
+    &_eventlocation > p {
+        @include font-sub-heading-xl-devices-s-sub-heading();
+        text-align: center;
+        margin: 0;
+        color: $color-text;
+        margin-top: 1.5rem;
+    }
+
+    &_duration > p {
+        @include font-labels-reference-meta-caption-breadcrumb();
+        text-align: center;
+        color: $color-labels-reference;
+        margin-bottom: 0;
+    }
+
+    &_location--wood > p {
+        @include font-paragraph-xl-devices-lead-text();
+        text-align: center;
+        margin-bottom: 0;
+        @include sc-spacing(margin-bottom);
+
+        @include media-breakpoint-up(md) {
+            @include lc-spacing(margin-bottom);
+        }
+    }
+
+    &_image--wood > img {
+        max-height: 40px;
+        max-width: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 10px;
+    }
+
+    &_woodowner > p {
+        @include font-labels-reference-category-label();
+        text-align: center;
+        color: $color-labels-reference;
+        line-height: 18px;
+        font-family: Andes;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    &_woodnames {
+        ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+            margin-bottom: 0;
+
+            @include sc-spacing(margin-top);
+
+            li {
+                @include font-buttons-links-small-navigation-link();
+                display: inline-block;
+                color: $color-labels-reference;
+                font-weight: 500;
+
+                &:after {
+                    display: inline-block;
+                    content: "\B7";
+                    padding: 0 5px;
+                }
+
+                &:last-child:after {
+                    content: "";
+                }
+            }
+        }
+    }
+
+    &_searchtext > p {
+        @include font-heading-xl-devices-xs-heading();
+        text-align: center;
+        margin: 0 0 17px 0;
+    }
+}
+
+.image__header {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    &--initial-height {
+        height: calc(100vh - 64px);
+
+        @include media-breakpoint-up(lg) {
+            height: calc(100vh - 185px);
+        }
+    }
+
+    &__credit {
+        @include font-labels-reference-small-print;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        padding: 10px 16px 10px 16px;
+    }
+
+    & .row {
+        //align-items: center !important;
+        @media (min-width: 992px) {
+            align-items: center !important;
+        }
+        /*&.overlay-centre {
+            align-items: center !important;
+        }*/
+    }
+
+    & .light {
+        & h1, .image__header_detail > p {
+            color: #fff !important;
+        }
+    }
+
+    & .light {
+        & .btn--outline {
+            &:hover {
+                background-color: #99eac2;
+            }
+        }
+    }
+
+
+    h1 {
+        @include font-heading-small-devices-xl-heading();
+        font-size: 2.5em;
+        line-height: 1.1em !important;
+        text-align: center !important;
+        color: $color-text;
+        padding: 0 15px;
+
+        @include xs-spacing(margin-bottom);
+
+        @include media-breakpoint-up(md) {
+            @include font-heading-xl-devices-xl-heading();
+            font-size: 4em;
+            line-height: 1em !important;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &_overlay {
+        @include m-spacing(padding);
+        // Testing only
+        text-align: center !important;
+        //margin: 0 15px;
+    }
+
+    &_detail {
+        @include xs-spacing(margin-bottom);
+
+        > p {
+            @include font-paragraph-small-devices-lead-text();
+
+            @include media-breakpoint-up(md) {
+                @include font-paragraph-xl-devices-lead-text();
+            }
+
+            color: $color-text;
+            line-height: 32px !important;
+            text-align: center !important;
+            padding: 0 15px;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &_link {
+        .btn--outline,
+        .btn--action {
+            margin: 0 !important;
+            display: inline-block !important;
+        }
+    }
+}
+
+.page-search-input-group {
+    @extend .input-group;
+}
+
+.page-search-input {
+    @extend .form-control;
+    @extend .py-2;
+    @extend .border-right-0;
+    @extend .border;
+    height: 60px;
+    border-radius: 2px;
+    padding-left: 25px;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.page-search-btn {
+    @extend .btn;
+    @extend .btn-outline-secondary;
+    @extend .border-left-0;
+    @extend .border;
+    background-color: $white;
+    color: $white;
+    padding-right: 25px;
+
+    &:hover {
+        background-color: $white;
+        color: $white;
+    }
+
+    &:active {
+        background-color: $white;
+        color: $white;
+    }
+
+    &:focus {
+        background-color: $white;
+        color: $white;
+        box-shadow: $white;
+    }
+
+    &:not(:disabled):not(.disabled):active {
+        background-color: $white;
+        color: $white;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none;
+    }
+}
+
+.blog {
+    &__listing {
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.language__switcher {
+    height: 44px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 0 0 rgba(0,36,25,0.1);
+
+    @include media-breakpoint-up(sm) {
+        height: 48px;
+    }
+
+    & .col-5 {
+        padding-top: 12px;
+    }
+
+    & .col-5 p, .col-5 p a {
+        font-family: "AndesBold";
+        font-size: 13px;
+        line-height: 18px;
+        color: #000000;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 14px;
+        }
+    }
+
+    & .col-5:first-of-type {
+        //margin-right: 5px;
+        & p {
+            text-align: right;
+            box-sizing: border-box;
+            border-right: 1px solid rgba(0,36,25,0.1);
+            padding-right: 20px;
+        }
+    }
+
+    & .col-5:last-of-type {
+        margin-left: 15px;
+
+        & p {
+            text-align: left;
+        }
+    }
+}
+
+.search-container {
+    @extend .container;
+    @include s-spacing(padding-top, padding-bottom);
+
+    @include media-breakpoint-up(md) {
+        @include xs-spacing(padding-top, padding-bottom);
+    }
+
+    &__search-column {
+        @extend .col-lg-8;
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            height: 60px;
+        }
+
+        &__results-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__header {
+            @include font-heading-small-devices-xs-heading;
+            display: block;
+            width: 100%;
+            text-align: center;
+            float: left;
+
+
+            @include media-breakpoint-up(md) {
+                @include font-heading-xl-devices-xs-heading;
+                display: inline-block;
+                width: 190px;
+                vertical-align: middle;
+                margin-bottom: 0;
+            }
+        }
+
+        &__results {
+            display: block;
+            width: 100%;
+            text-align: center;
+            float: left;
+            clear: both;
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                width: 190px;
+                vertical-align: middle;
+                text-align: left;
+            }
+        }
+
+        .page-search-input-group {
+            display: block;
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                width: 499px;
+                display: inline-block;
+                padding-left: 24px;
+                vertical-align: middle;
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 419px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 539px;
+            }
+        }
+    }
+
+    &__search-input {
+        width: 100%;
+
+        input[type="search"] {
+
+            @extend .form-control;
+            @include font-labels-reference-form-input-text;
+            display: inline;
+            height: 60px;
+            border: 1px solid #786F6F;
+            border-radius: 2px !important;
+            background-color: #FFFFFF;
+            line-height: 20px;
+            color: $color-text;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 10px 45px 10px 25px;
+
+            &:active,
+            &:focus {
+                border: 2px solid #0DA459 !important;
+                border-radius: 2px !important;
+                background-color: #FFFFFF !important;
+                box-shadow: 0 0 0 0.2rem rgba(13,164,89,0.15) !important;
+            }
+
+            &::-ms-clear {
+                display: none !important;
+            }
+        }
+    }
+
+    &__search-button {
+        @extend .find-wood__search-container__search-button;
+    }
+}

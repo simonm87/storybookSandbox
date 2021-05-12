@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.storybook",
+    "\\src",
+    "\\src\\css",
+    "\\src\\sass",
+    "\\src\\sass\\abstracts",
+    "\\src\\sass\\base",
+    "\\src\\stories",
+    "\\src\\stories\\assets"
+  ],
+  "SelectedNode": "\\src\\sass\\main.scss",
+  "PreviewInSolutionExplorer": false
+}

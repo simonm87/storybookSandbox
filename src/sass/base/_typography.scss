@@ -1,0 +1,342 @@
+﻿/*typography rules*/
+
+/*font-faces*/
+@font-face {
+    font-family: Andes;
+    src: url(fonts/Andes.eot);
+    src: url(fonts/Andes.eot?#iefix) format("embedded-opentype"),url(fonts/Andes.woff2) format("woff2"),url(fonts/Andes.woff) format("woff"),url(fonts/Andes.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesBold;
+    src: url(fonts/AndesBold.eot);
+    src: url(fonts/AndesBold.eot?#iefix) format("embedded-opentype"),url(fonts/AndesBold.woff2) format("woff2"),url(fonts/AndesBold.woff) format("woff"),url(fonts/AndesBold.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesBlack;
+    src: url(fonts/AndesBlack.eot);
+    src: url(fonts/AndesBlack.eot?#iefix) format("embedded-opentype"),url(fonts/AndesBlack.woff2) format("woff2"),url(fonts/AndesBlack.woff) format("woff"),url(fonts/AndesBlack.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesBook;
+    src: url(fonts/AndesBook.eot);
+    src: url(fonts/AndesBook.eot?#iefix) format("embedded-opentype"),url(fonts/AndesBook.woff2) format("woff2"),url(fonts/AndesBook.woff) format("woff"),url(fonts/AndesBook.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesExtraBold;
+    src: url(fonts/AndesExtraBold.eot);
+    src: url(fonts/AndesExtraBold.eot?#iefix) format("embedded-opentype"),url(fonts/AndesExtraBold.woff2) format("woff2"),url(fonts/AndesExtraBold.woff) format("woff"),url(fonts/AndesExtraBold.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesLight;
+    src: url(fonts/AndesLight.eot);
+    src: url(fonts/AndesLight.eot?#iefix) format("embedded-opentype"),url(fonts/AndesLight.woff2) format("woff2"),url(fonts/AndesLight.woff) format("woff"),url(fonts/AndesLight.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesExtraLight;
+    src: url(fonts/AndesExtraLight.eot);
+    src: url(fonts/AndesExtraLight.eot?#iefix) format("embedded-opentype"),url(fonts/AndesExtraLight.woff2) format("woff2"),url(fonts/AndesExtraLight.woff) format("woff"),url(fonts/AndesExtraLight.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: AndesMedium;
+    src: url(fonts/AndesMedium.eot);
+    src: url(fonts/AndesMedium.eot?#iefix) format("embedded-opentype"),url(fonts/AndesMedium.woff2) format("woff2"),url(fonts/AndesMedium.woff) format("woff"),url(fonts/AndesMedium.ttf) format("truetype")
+}
+
+/*@font-face {
+    font-family: AndesSemiBold;
+    src: url(fonts/AndesSemiBold.eot);
+    src: url(fonts/AndesSemiBold.eot?#iefix) format("embedded-opentype"),url(fonts/AndesSemiBold.woff2) format("woff2"),url(fonts/AndesSemiBold.woff) format("woff"),url(srcfonts/AndesSemiBold.ttf) format("truetype")
+}*/
+
+$font-family-andes: "Andes";
+$font-family-andesbold: "AndesBold";
+$font-family-andesblack: "AndesBlack";
+$font-family-andesbook: "AndesBook";
+$font-family-andesextrabold: "AndesExtraBold";
+$font-family-andeslight: "AndesLight";
+$font-family-andesextralight: "AndesExtraLight";
+$font-family-andesmedium: "AndesMedium";
+$font-family-andessemibold: "AndesSemiBold";
+
+/*font-weights*/
+$font-weight-extra-bold: 800;
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+$font-text-align-left: left;
+$font-style-normal: normal;
+$text-transform-uppercase: uppercase;
+
+/* Heading/XL Devices/XL Heading font style */
+@mixin font-heading-xl-devices-xl-heading () {
+    font-size: 4.500em; //72px
+    line-height: 4.625rem; //74px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/XL Devices/L Heading font style */
+@mixin font-heading-xl-devices-l-heading () {
+    font-size: 3.250em; //52px
+    line-height: 3.500rem; //56px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/XL Devices/M Heading font style */
+@mixin font-heading-xl-devices-m-heading () {
+    font-size: 2.250em; //36px
+    line-height: 2.375rem; //38px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/XL Devices/S Heading font style */
+@mixin font-heading-xl-devices-s-heading () {
+    font-size: 1.750em; //28px
+    line-height: 2.000rem; //32px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Heading/XL Devices/XS Heading font style */
+@mixin font-heading-xl-devices-xs-heading () {
+    font-size: 1.500em; //24px
+    line-height: 1.750rem; //28px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Sub Heading/XL Devices/L Sub Heading font style */
+@mixin font-sub-heading-xl-devices-l-sub-heading () {
+    font-size: 1.375em; //22px
+    line-height: 1.750rem; //28px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Sub Heading/XL Devices/S Sub Heading font style */
+@mixin font-sub-heading-xl-devices-s-sub-heading () {
+    font-size: 1.125em; //18px
+    line-height: 1.500rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Paragraph/XL Devices/Lead Text font style */
+@mixin font-paragraph-xl-devices-lead-text () {
+    font-size: 1.500em; //24px
+    line-height: 2.000rem; //32px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+
+/* Paragraph/XL Devices/Paragraph Text font style */
+@mixin font-paragraph-xl-devices-paragraph-text () {
+    font-size: 1.125em; //18px
+    line-height: 1.625rem; //26px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andeslight;
+}
+
+/* Buttons & Links/Link Text Large font style */
+@mixin font-buttons-links-link-text-large () {
+    font-size: 1.125em; //18px
+    line-height: 1.375rem; //22px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Buttons & Links/Large Navigation Link font style */
+@mixin font-buttons-links-large-navigation-link () {
+    font-size: 1.000em; //16px
+    line-height: 1.500rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+    border: none;
+}
+
+/* Buttons & Links/Small Navigation Link font style */
+@mixin font-buttons-links-small-navigation-link () {
+    font-size: 0.875em; //14px
+    line-height: 1.125rem; //18px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+
+/* Buttons & Links/Navigation Link (L+M Devices) font style */
+@mixin font-buttons-links-navigation-link-l-m-devices () {
+    font-size: 0.875em; //14px
+    line-height: 1.125rem; //18px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Buttons & Links/Link Text Small font style */
+@mixin font-buttons-links-link-text-small () {
+    font-size: 1.000em; //16px
+    line-height: 1.125rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Labels & Reference/Meta, Caption, Breadcrumb font style */
+@mixin font-labels-reference-meta-caption-breadcrumb () {
+    font-size: 0.875em; //14px
+    line-height: 1.125rem; //18px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesmedium;
+}
+
+/* Labels & Reference/Category Label font style */
+@mixin font-labels-reference-category-label () {
+    font-size: 0.688em; //11px
+    line-height: 0.875rem; //14px
+    text-align: $font-text-align-left;
+    letter-spacing: 0.125em;
+    text-transform: $text-transform-uppercase;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesmedium;
+}
+
+/* Labels & Reference/Form Field Label font style */
+@mixin font-labels-reference-form-field-label () {
+    font-size: 1.000em; //16px
+    line-height: 1.25rem; //20px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+    
+}
+
+/* Labels & Reference/Form Input Text font style */
+@mixin font-labels-reference-form-input-text () {
+    font-size: 1.000em; //16px
+    line-height: 1.25rem; //20px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+
+/* Labels & Reference/Small Print font style */
+@mixin font-labels-reference-small-print () {
+    font-size: 0.688em; //11px
+    line-height: 0.875rem; //14px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+
+/* Heading/Small Devices/XL Heading font style */
+@mixin font-heading-small-devices-xl-heading () {
+    font-size: 3.000em; //48px
+    line-height: 3.250rem; //52px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/Small Devices/L Heading font style */
+@mixin font-heading-small-devices-l-heading () {
+    font-size: 2.000em; //32px
+    line-height: 2.250rem; //36px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/Small Devices/M Heading font style */
+@mixin font-heading-small-devices-m-heading () {
+    font-size: 1.750em; //28px
+    line-height: 2.000rem; //32px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesextrabold;
+}
+
+/* Heading/Small Devices/S Heading font style */
+@mixin font-heading-small-devices-s-heading () {
+    font-size: 1.375em; //22px
+    line-height: 1.500rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Heading/Small Devices/XS Heading font style */
+@mixin font-heading-small-devices-xs-heading () {
+    font-size: 1.250em; //20px
+    line-height: 1.375rem; //22px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Sub Heading/Small Devices/L Sub Heading font style */
+@mixin font-sub-heading-small-devices-l-sub-heading () {
+    font-size: 1.125em; //18px
+    line-height: 1.500rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Sub Heading/Small Devices/S Sub Heading font style */
+@mixin font-sub-heading-small-devices-s-sub-heading () {
+    font-size: 1.000em; //16px
+    line-height: 1.250rem; //20px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andesbold;
+}
+
+/* Paragraph/Small Devices/Lead Text font style */
+@mixin font-paragraph-small-devices-lead-text () {
+    font-size: 1.250em; //20px
+    line-height: 1.750rem; //28px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+
+/* Paragraph/Small Devices/Paragraph Text font style */
+@mixin font-paragraph-small-devices-paragraph-text () {
+    font-size: 1.000em; //16px
+    line-height: 1.500rem; //24px
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andeslight;
+}
+
+@mixin form-descriptions () {
+    font-size: 1.000em; //16px;
+    line-height: 1.500rem; //24px;
+    text-align: $font-text-align-left;
+    font-style: $font-style-normal;
+    font-family: $font-family-andes;
+}
+

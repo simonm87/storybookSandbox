@@ -1,0 +1,199 @@
+﻿/*sass mixins*/
+
+@mixin animated-underline($colour, $weight) {
+    text-decoration: none;
+    border-bottom: $weight solid transparent;
+    transition: all 0.3s ease;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    &:hover {
+        text-decoration: none;
+        border-bottom-color: $colour;
+    }
+}
+
+// VERTICAL SPACING MIXINS
+
+//XL Spacing
+@mixin xl-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 4rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 4rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 6rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 6rem;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        @if ($propName1) {
+            #{$propName1}: 9rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 9rem;
+        }
+    }
+}
+
+//Large Spacing
+@mixin l-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 2.5rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 2.5rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 4.5rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 4.5rem;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        @if ($propName1) {
+            #{$propName1}: 6rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 6rem;
+        }
+    }
+}
+
+//Medium Spacing
+@mixin m-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 2rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 4.5rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 4.5rem;
+        }
+    }
+}
+
+//Small Spacing
+@mixin s-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 1.5rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 1.5rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 3rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 3rem;
+        }
+    }
+}
+
+//XS Spacing
+@mixin xs-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 1rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 2rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 2rem;
+        }
+    }
+}
+
+//Large Component Spacing
+@mixin lc-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 1rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        @if ($propName1) {
+            #{$propName1}: 1.5rem;
+        }
+
+        @if ($propName2) {
+            #{$propName2}: 1.5rem;
+        }
+    }
+}
+
+//Small Component Spacing
+@mixin sc-spacing($propName1: null, $propName2: null) {
+    @if ($propName1) {
+        #{$propName1}: 1rem;
+    }
+
+    @if ($propName2) {
+        #{$propName2}: 1rem;
+    }
+}
+
+
+//This mixin is used for generating a minimum height for a background based on the apect ratio (i.e. 16:9) and the number
+//of columns it will cover taking into account the BS container width 
+//Pass in 16, 9, 5 (width, height, columns)
+@mixin minRelativeHeight ($widthRatio, $heightRatio, $numberColumns) {
+    
+    min-height: calc(((((100vw - 30px)/12) * #{$numberColumns}) / #{$widthRatio}) * #{$heightRatio});
+
+    @include media-breakpoint-up(sm) {
+        min-height: calc(((((540px - 30px)/12) * #{$numberColumns}) / #{$widthRatio}) * #{$heightRatio});
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: calc(((((720px - 30px)/12) * #{$numberColumns}) / #{$widthRatio}) * #{$heightRatio});
+    }
+
+    @include media-breakpoint-up(lg) {
+        min-height: calc(((((960px - 30px)/12) * #{$numberColumns}) / #{$widthRatio}) * #{$heightRatio});
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-height: calc(((((1140px - 30px)/12) * #{$numberColumns}) / #{$widthRatio}) * #{$heightRatio});
+    }
+}

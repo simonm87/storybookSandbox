@@ -1,0 +1,16 @@
+﻿.volunteering_page {
+    &__spacing {
+        @include l-spacing(margin-bottom);
+        /*@include s-spacing(margin-top);*/
+
+        margin-top: 0.5rem;
+
+        @include media-breakpoint-up(md) {
+            margin-top: -2rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            margin-top: -4rem;
+        }
+    }
+}
