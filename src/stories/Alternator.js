@@ -33,7 +33,7 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                     <article tabIndex="-1">
                         <div className="alternator-row">
                             <div className={alternatorRowCols}>
-                                <img src={imageURL} title="Muntjac deer peeking its head out of long grass" alt="" />
+                                <img src={imageURL} title="Muntjac deer peeking its head out of the long grass" alt="" />
                                 <figcaption>
                                     <p className={imgCreditClass}>{imageCredit}</p>
                                 </figcaption>
