@@ -1,6 +1,6 @@
 ﻿
-
 .alternator-row {
+
     @include m-spacing(padding-bottom);
 
     &:last-child {
@@ -8,9 +8,31 @@
     }
 
     img {
-        @include sc-spacing(margin-bottom);
         width: 100%;
     }
+
+    &__skeletal-screen {
+        background-color: $color-lazy-background;
+        overflow: hidden;
+        min-height: calc((((100vw - 30px) / 16) * 9) - 11px);
+
+        @include media-breakpoint-up(sm) {
+            min-height: 285px;
+        }
+
+        @include media-breakpoint-up(md) {
+            min-height: 257px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            min-height: 304px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            min-height: 363px;
+        }
+    }
+
 
     &__cols {
         @extend .col-md-8;
@@ -18,9 +40,10 @@
         padding: 0;
 
         &__img-credit {
-
+            @include sc-spacing(padding-top);
             @include font-labels-reference-small-print;
             text-align: center;
+
 
             @include media-breakpoint-up(md) {
                 text-align: left;

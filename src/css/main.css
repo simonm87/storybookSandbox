@@ -14,6 +14,7 @@
 /*Emotive Palette*/
 /*Default Palette*/
 /*Buttons and Links*/
+/*Misc*/
 /*custom bootstrap*/
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10671,6 +10672,8 @@ body {
 
 img {
   max-width: 100%; }
+  img.lazy {
+    filter: blur(10px); }
 
 /* Headings */
 h1 {
@@ -11083,11 +11086,27 @@ i {
     .alternator-row {
       padding-bottom: 4.5rem; } }
   .alternator-row img {
-    margin-bottom: 1rem;
     width: 100%; }
+  .alternator-row__skeletal-screen {
+    background-color: rgba(0, 36, 25, 0.1);
+    overflow: hidden;
+    min-height: calc((((100vw - 30px) / 16) * 9) - 11px); }
+    @media (min-width: 576px) {
+      .alternator-row__skeletal-screen {
+        min-height: 285px; } }
+    @media (min-width: 768px) {
+      .alternator-row__skeletal-screen {
+        min-height: 257px; } }
+    @media (min-width: 992px) {
+      .alternator-row__skeletal-screen {
+        min-height: 304px; } }
+    @media (min-width: 1200px) {
+      .alternator-row__skeletal-screen {
+        min-height: 363px; } }
   .alternator-row__cols {
     padding: 0; }
     .alternator-row__cols__img-credit {
+      padding-top: 1rem;
       font-size: 0.688em;
       line-height: 0.875rem;
       text-align: left;

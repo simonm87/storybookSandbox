@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import './button.css';
 import '../css/main.css'
+import '../js/lazy/lazy-loading.js'
+import placeHolderImg from '../images/Alternator-100w.jpg';
+import medResImg from '../images/Alternator-542w.jpg';
+import highResImg from '../images/Alternator-647w.jpg';
 
 /**
  * Primary UI component for user interaction
@@ -32,8 +35,16 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                 <div className="col-md-12">
                     <article tabIndex="-1">
                         <div className="alternator-row">
+
                             <div className={alternatorRowCols}>
-                                <img src={imageURL} title="Muntjac deer peeking its head out of long grass" alt="" />
+                                <div className="alternator-row__skeletal-screen">
+                                    <img className="lazy"
+                                        src={placeHolderImg}
+                                        data-src={highResImg}
+                                        data-srcset={`${highResImg} 647w, ${medResImg} 542w`}
+                                        sizes="(min-width: 1200px) 647w, 542w"
+                                        title="Muntjac deer peeking its head out of long grass" alt=""></img>
+                                </div>
                                 <figcaption>
                                     <p className={imgCreditClass}>{imageCredit}</p>
                                 </figcaption>
@@ -42,11 +53,13 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                                 <div className="title"><h3>{heading}</h3></div>
                                 <p>{paragraphText}</p>
                             </div>
+
                         </div>
                     </article>  
                 </div>
             </div>
         </div>
+
   );
 };
 
@@ -61,8 +74,8 @@ Alternator.propTypes = {
 
 Alternator.defaultProps = {
   variant: 'Image left',
-  heading:'Pests and diseases',
-  paragraphText: 'New tree diseases and insect pests are arriving in the UK each year, affecting tree health. In many areas, high and increasing deer numbers prevent new saplings from establishing and can impact woodland ground flora. This hinders progress with restoration. Grey squirrels also have implications for restoration management.',
+  heading: 'Pests and diseases',
+  paragraphText: 'New tree diseases and insect pests are arriving in the UK each year, affecting tree health. In many areas, high and increasing deer numbers prevent new saplings from establishing and can impact woodland ground flora. This hinders progress with restoration.',
   imageURL: 'https://www.woodlandtrust.org.uk/media/1387/muntjack-deer-wtml-1062471-amy-lewis.jpg?center=0.424,0.46396396396396394&amp;mode=crop&amp;width=635&amp;height=357&amp;rnd=132048886220000000',
   imageCredit: 'Credit: Amy Lewis / WTML'
 };

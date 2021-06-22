@@ -13,6 +13,10 @@ body {
 
 img {
     max-width: 100%;
+
+    &.lazy {
+        filter: blur(10px);
+    }
 }
 
 /* Headings */
@@ -21,7 +25,6 @@ h1 {
 
     @include media-breakpoint-up(md) {
         @include font-heading-xl-devices-l-heading;
-        
     }
 
     &.hero {
@@ -36,7 +39,7 @@ h1 {
 h2 {
     @include font-heading-small-devices-m-heading;
     margin-bottom: 16px;
-    line-height:2.000rem;
+    line-height: 2.000rem;
 
     @include media-breakpoint-up(md) {
         @include font-heading-xl-devices-m-heading;
@@ -53,8 +56,9 @@ h3 {
         @include font-heading-xl-devices-s-heading;
         margin-top: 24px;
         margin-bottom: 16px;
+
         &:first-child {
-            margin-top:0;
+            margin-top: 0;
         }
     }
 }
@@ -185,16 +189,20 @@ input, textarea, select, button {
 .f2 {
     @extend h2;
 }
+
 .h3,
-.f3{
+.f3 {
     @extend h3;
 }
+
 .h4 {
     @extend h4;
 }
+
 .h5 {
     @extend h5;
 }
+
 .h6 {
     @extend h6;
 }
