@@ -63,7 +63,7 @@ ImageLeft.args = {
 ImageLeft.parameters = {
     docs: {
         description: {
-            component: '<p>The alternator uses a Z shaped pattern, which is the most natural eye movement when scanning web content. We use it as a viewing aid when imagery can descrive or support the copy.</p><p> This component is dependent on: <b>Bootstrap 4.1.3</b></p> ',
+            component: '<h3>We use the right, left alternator to visually demonstrate features and benefits and describe the appearance and behaviour of trees, woods and wildlife.</h3><p>Guidance Image - Alternator image ratio is 16: 9 with a maximum crop size of 690px x 388px on medium devices(e.g iPad portrait)</p><p> This component is dependent on: <b>Bootstrap 4.1.3</b></p> ',
         },
     },
     design: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/main.css'
-import '../js/lazy/lazy-loading.js'
+//import '../js/lazy/lazy-loading.js'
 import placeHolderImg from '../images/Alternator-100w.jpg';
 import medResImg from '../images/Alternator-542w.jpg';
 import highResImg from '../images/Alternator-647w.jpg';
@@ -35,16 +35,8 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                 <div className="col-md-12">
                     <article tabIndex="-1">
                         <div className="alternator-row">
-
                             <div className={alternatorRowCols}>
-                                <div className="alternator-row__skeletal-screen">
-                                    <img className="lazy"
-                                        src={placeHolderImg}
-                                        data-src={highResImg}
-                                        data-srcset={`${highResImg} 647w, ${medResImg} 542w`}
-                                        sizes="(min-width: 1200px) 647w, 542w"
-                                        title="Muntjac deer peeking its head out of long grass" alt=""></img>
-                                </div>
+                                <img src={imageURL} title="Muntjac deer peeking its head out of long grass" alt="" />
                                 <figcaption>
                                     <p className={imgCreditClass}>{imageCredit}</p>
                                 </figcaption>
@@ -53,13 +45,11 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                                 <div className="title"><h3>{heading}</h3></div>
                                 <p>{paragraphText}</p>
                             </div>
-
                         </div>
-                    </article>  
+                    </article>
                 </div>
             </div>
         </div>
-
   );
 };
 
