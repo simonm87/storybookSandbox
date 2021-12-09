@@ -11112,7 +11112,8 @@ i {
       text-align: left;
       font-style: normal;
       font-family: "Andes";
-      text-align: center; }
+      text-align: center;
+      border: 3px solid yellow; }
       @media (min-width: 768px) {
         .alternator-row__cols__img-credit {
           text-align: left;

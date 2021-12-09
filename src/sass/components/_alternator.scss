@@ -43,7 +43,7 @@
             @include sc-spacing(padding-top);
             @include font-labels-reference-small-print;
             text-align: center;
-
+            border: 3px solid yellow;
 
             @include media-breakpoint-up(md) {
                 text-align: left;
