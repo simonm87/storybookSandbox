@@ -1,21 +1,4 @@
-﻿//$(document).ready(function () {
-//    console.log("load soundplayer...")
-//    if ($('.audio-player').length) {
-//        $('.audio-player').each(function (index) {
-
-//            var audioId = '#' + $(this).attr('id');
-//            GreenAudioPlayer.init({
-//                selector: audioId,
-//                stopOthersOnPlay: true,
-//                showDownloadButton: false
-//            });
-
-//        });
-//    }
-
-//});
-
-(function (f) { if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() } else if (typeof define === "function" && define.amd) { define([], f) } else { var g; if (typeof window !== "undefined") { g = window } else if (typeof global !== "undefined") { g = global } else if (typeof self !== "undefined") { g = self } else { g = this } g.GreenAudioPlayer = f() } })(function () {
+﻿(function (f) { if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() } else if (typeof define === "function" && define.amd) { define([], f) } else { var g; if (typeof window !== "undefined") { g = window } else if (typeof global !== "undefined") { g = global } else if (typeof self !== "undefined") { g = self } else { g = this } g.GreenAudioPlayer = f() } })(function () {
     var define, module, exports; return (function () { function r(e, n, t) { function o(i, f) { if (!n[i]) { if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a } var p = n[i] = { exports: {} }; e[i][0].call(p.exports, function (r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t) } return n[i].exports } for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)o(t[i]); return o } return r })()({
         1: [function (require, module, exports) {
             "use strict";
@@ -48,7 +31,6 @@
                 /*#__PURE__*/
                 function () {
                     function GreenAudioPlayer(player, options) {
-                        console.log(this);
                         _classCallCheck(this, GreenAudioPlayer);
 
                         this.audioPlayer = typeof player === 'string' ? document.querySelector(player) : player;
@@ -457,17 +439,6 @@
             var _default = GreenAudioPlayer;
             exports.default = _default;
 
-            console.log(document.querySelectorAll('#audio_12345'));
-
-            GreenAudioPlayer.init({
-                selector: '#audio_12345',
-                stopOthersOnPlay: true,
-                showDownloadButton: false
-            });
-
-
         }, {}]
     }, {}, [1])(1)
 });
-
-

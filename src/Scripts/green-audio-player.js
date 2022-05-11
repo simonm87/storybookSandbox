@@ -1,19 +1,4 @@
-﻿//$(document).ready(function () {
-//    console.log("load soundplayer...")
-//    if ($('.audio-player').length) {
-//        $('.audio-player').each(function (index) {
-
-//            var audioId = '#' + $(this).attr('id');
-//            GreenAudioPlayer.init({
-//                selector: audioId,
-//                stopOthersOnPlay: true,
-//                showDownloadButton: false
-//            });
-
-//        });
-//    }
-
-//});
+﻿//Original version of green audio player
 
 (function (f) { if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() } else if (typeof define === "function" && define.amd) { define([], f) } else { var g; if (typeof window !== "undefined") { g = window } else if (typeof global !== "undefined") { g = global } else if (typeof self !== "undefined") { g = self } else { g = this } g.GreenAudioPlayer = f() } })(function () {
     var define, module, exports; return (function () { function r(e, n, t) { function o(i, f) { if (!n[i]) { if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a } var p = n[i] = { exports: {} }; e[i][0].call(p.exports, function (r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t) } return n[i].exports } for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)o(t[i]); return o } return r })()({
@@ -48,7 +33,6 @@
                 /*#__PURE__*/
                 function () {
                     function GreenAudioPlayer(player, options) {
-                        console.log(this);
                         _classCallCheck(this, GreenAudioPlayer);
 
                         this.audioPlayer = typeof player === 'string' ? document.querySelector(player) : player;
@@ -88,26 +72,11 @@
                             var _this = this;
 
                             var self = this;
-
-                            self.audioPlayer.addEventListener('keydown', function (event) {
-                                if (self.isDraggable(event.target)) {
-                                    self.currentlyDragged = event.target;
-                                    var handleMethod = self.currentlyDragged.dataset.method;
-                                    var listener = self[handleMethod].bind(self);
-                                    window.addEventListener('keydown', listener, false);
-                                    window.addEventListener('keyup', function () {
-                                        self.currentlyDragged = false;
-                                        window.removeEventListener('keydown', listener, false);
-                                    }, false);
-                                }
-                            });
-
                             self.audioPlayer.addEventListener('mousedown', function (event) {
                                 if (self.isDraggable(event.target)) {
                                     self.currentlyDragged = event.target;
                                     var handleMethod = self.currentlyDragged.dataset.method;
                                     var listener = self[handleMethod].bind(self);
-
                                     window.addEventListener('mousemove', listener, false);
                                     window.addEventListener('mouseup', function () {
                                         self.currentlyDragged = false;
@@ -131,8 +100,6 @@
                                     event.preventDefault();
                                 }
                             });
-
-
                             this.playPauseBtn.addEventListener('click', this.togglePlay.bind(self));
                             this.player.addEventListener('timeupdate', this.updateProgress.bind(self));
                             this.player.addEventListener('volumechange', this.updateVolume.bind(self));
@@ -149,14 +116,6 @@
                             this.volumeBtn.addEventListener('click', function () {
                                 self.volumeBtn.classList.toggle('open');
                                 self.volumeControls.classList.toggle('hidden');
-
-                                if (self.volumeBtn.getAttribute("aria-pressed") === "true") {
-                                    self.volumeBtn.setAttribute("aria-pressed", "false");
-                                } else {
-                                    self.volumeBtn.setAttribute("aria-pressed", "true");
-                                }
-
-                                console.log(self.volumeBtn);
                             });
                             window.addEventListener('resize', self.directionAware.bind(self));
                             window.addEventListener('scroll', self.directionAware.bind(self));
@@ -288,66 +247,15 @@
                     }, {
                         key: "rewind",
                         value: function rewind(event) {
-
-                            if (event instanceof KeyboardEvent) {
-
-                                if (event.keyCode === 37 || event.keyCode === 40) {
-                                    event.preventDefault();
-                                    this.player.currentTime = this.player.currentTime - 5;
-
-                                } else if (event.keyCode === 38 || event.keyCode === 39) {
-                                    event.preventDefault();
-
-                                    var newTime = this.player.currentTime + 5;
-                                    if (newTime > this.player.duration) {
-                                        this.player.currentTime = Math.floor(this.player.duration);
-                                    } else {
-                                        this.player.currentTime = newTime;
-                                    }
-                                }
-
-
-
-                            } else {
-                                if (this.inRange(event)) {
-                                    this.player.currentTime = this.player.duration * this.getCoefficient(event);
-                                }
+                            if (this.inRange(event)) {
+                                this.player.currentTime = this.player.duration * this.getCoefficient(event);
                             }
                         }
                     }, {
                         key: "changeVolume",
                         value: function changeVolume(event) {
-
-                            if (event instanceof KeyboardEvent) {
-                                if (event.keyCode === 38) {
-                                    event.preventDefault();
-
-                                    //Increase volume by 5%
-                                    var increasedVolume = this.player.volume + 0.05;
-                                    if (increasedVolume >= 1) {
-                                        this.player.volume = 1;
-                                    } else {
-                                        this.player.volume = increasedVolume.toFixed(2);
-                                    }
-
-                                } else if (event.keyCode === 40) {
-                                    event.preventDefault();
-
-                                    //Decrease volume by 5%
-                                    var decreasedVolume = this.player.volume - 0.05;
-                                    if (decreasedVolume <= 0) {
-                                        this.player.volume = 0;
-                                    } else {
-                                        this.player.volume = decreasedVolume.toFixed(2);
-                                    }
-
-                                }
-                            } else {
-                                if (this.inRange(event)) {
-                                    console.log("current mouse volume : " + this.player.volume);
-                                    this.player.volume = Math.round(this.getCoefficient(event) * 10) / 10;
-                                    console.log("new mouse volume : " + this.player.volume);
-                                }
+                            if (this.inRange(event)) {
+                                this.player.volume = Math.round(this.getCoefficient(event) * 10) / 10;
                             }
                         }
                     }, {
@@ -413,7 +321,7 @@
                     }, {
                         key: "getTemplate",
                         value: function getTemplate() {
-                            return "\n            <div class=\"loading\">\n                <div class=\"loading__spinner\"></div>\n            </div>\n            \n            <button class=\"play-pause-btn\" aria-label=\"Play\" aria-pressed=\"false\">\n                <svg focusable=\"false\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"24\" viewBox=\"0 0 18 24\">\n                    <path fill=\"#566574\" fill-rule=\"evenodd\" d=\"M18 12L0 24V0\" class=\"play-pause-btn__icon\"/>\n                </svg>\n            </button>\n    \n            <div class=\"controls\">\n                <span class=\"controls__current-time\">0:00</span>\n                <div class=\"controls__slider slider\" data-direction=\"horizontal\">\n                    <div class=\"controls__progress gap-progress\">\n                        <button class=\"pin progress__pin\" data-method=\"rewind\" role=\"slider\" aria-label=\"Seek\"></button>\n                    </div>\n                </div>\n                <span class=\"controls__total-time\">0:00</span>\n            </div>\n    \n            <div class=\"volume\">\n                <button class=\"volume__button\" aria-label=\"Change volume\" aria-pressed=\"false\">\n                    <svg focusable=\"false\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n                        <path class=\"volume__speaker\" fill=\"#566574\" fill-rule=\"evenodd\" d=\"M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z\"/>\n                    </svg>\n                </button>\n                <div class=\"volume__controls hidden\">\n                    <div class=\"volume__slider slider\" data-direction=\"vertical\">\n                        <div class=\"volume__progress gap-progress\">\n                            <button class=\"pin volume__pin\" data-method=\"changeVolume\" role=\"slider\" aria-label=\"Volume\"></div>\n                        </div>\n                    </div>\n                </button>\n            </div>\n            \n            <div class=\"download\" >\n                <a class=\"download__link\" href=\"\" download=\"\">\n                    <svg focusable=\"false\" aria-hidden=\"true\" width=\"24\" height=\"24\" fill=\"#566574\" enable-background=\"new 0 0 29.978 29.978\" version=\"1.1\" viewBox=\"0 0 29.978 29.978\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\">\n                        <path d=\"m25.462 19.105v6.848h-20.947v-6.848h-4.026v8.861c0 1.111 0.9 2.012 2.016 2.012h24.967c1.115 0 2.016-0.9 2.016-2.012v-8.861h-4.026z\"/>\n                        <path d=\"m14.62 18.426l-5.764-6.965s-0.877-0.828 0.074-0.828 3.248 0 3.248 0 0-0.557 0-1.416v-8.723s-0.129-0.494 0.615-0.494h4.572c0.536 0 0.524 0.416 0.524 0.416v8.742 1.266s1.842 0 2.998 0c1.154 0 0.285 0.867 0.285 0.867s-4.904 6.51-5.588 7.193c-0.492 0.495-0.964-0.058-0.964-0.058z\"/>\n                    </svg>\n                </a>\n            </div>\n        ";
+                            return "\n            <div class=\"loading\">\n                <div class=\"loading__spinner\"></div>\n            </div>\n            \n            <div class=\"play-pause-btn\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"24\" viewBox=\"0 0 18 24\">\n                    <path fill=\"#566574\" fill-rule=\"evenodd\" d=\"M18 12L0 24V0\" class=\"play-pause-btn__icon\"/>\n                </svg>\n            </div>\n    \n            <div class=\"controls\">\n                <span class=\"controls__current-time\">0:00</span>\n                <div class=\"controls__slider slider\" data-direction=\"horizontal\">\n                    <div class=\"controls__progress gap-progress\">\n                        <div class=\"pin progress__pin\" data-method=\"rewind\"></div>\n                    </div>\n                </div>\n                <span class=\"controls__total-time\">0:00</span>\n            </div>\n    \n            <div class=\"volume\">\n                <div class=\"volume__button\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n                        <path class=\"volume__speaker\" fill=\"#566574\" fill-rule=\"evenodd\" d=\"M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z\"/>\n                    </svg>\n                </div>\n                <div class=\"volume__controls hidden\">\n                    <div class=\"volume__slider slider\" data-direction=\"vertical\">\n                        <div class=\"volume__progress gap-progress\">\n                            <div class=\"pin volume__pin\" data-method=\"changeVolume\"></div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            \n            <div class=\"download\" >\n                <a class=\"download__link\" href=\"\" download=\"\">\n                    <svg width=\"24\" height=\"24\" fill=\"#566574\" enable-background=\"new 0 0 29.978 29.978\" version=\"1.1\" viewBox=\"0 0 29.978 29.978\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\">\n                        <path d=\"m25.462 19.105v6.848h-20.947v-6.848h-4.026v8.861c0 1.111 0.9 2.012 2.016 2.012h24.967c1.115 0 2.016-0.9 2.016-2.012v-8.861h-4.026z\"/>\n                        <path d=\"m14.62 18.426l-5.764-6.965s-0.877-0.828 0.074-0.828 3.248 0 3.248 0 0-0.557 0-1.416v-8.723s-0.129-0.494 0.615-0.494h4.572c0.536 0 0.524 0.416 0.524 0.416v8.742 1.266s1.842 0 2.998 0c1.154 0 0.285 0.867 0.285 0.867s-4.904 6.51-5.588 7.193c-0.492 0.495-0.964-0.058-0.964-0.058z\"/>\n                    </svg>\n                </a>\n            </div>\n        ";
                         }
                     }, {
                         key: "formatTime",
@@ -425,19 +333,15 @@
                     }, {
                         key: "pausePlayer",
                         value: function pausePlayer(player) {
-                            var playPressedElement = player.parentElement.querySelector('.play-pause-btn');
                             var playPauseButton = player.parentElement.querySelector('.play-pause-btn__icon');
                             playPauseButton.attributes.d.value = 'M18 12L0 24V0';
-                            playPressedElement.setAttribute("aria-pressed", "false");
                             player.pause();
                         }
                     }, {
                         key: "playPlayer",
                         value: function playPlayer(player) {
-                            var playPressedElement = player.parentElement.querySelector('.play-pause-btn');
                             var playPauseButton = player.parentElement.querySelector('.play-pause-btn__icon');
                             playPauseButton.attributes.d.value = 'M0 0h6v24H0zM12 0h6v24h-6z';
-                            playPressedElement.setAttribute("aria-pressed", "true");
                             player.play();
                         }
                     }, {
@@ -457,17 +361,6 @@
             var _default = GreenAudioPlayer;
             exports.default = _default;
 
-            console.log(document.querySelectorAll('#audio_12345'));
-
-            GreenAudioPlayer.init({
-                selector: '#audio_12345',
-                stopOthersOnPlay: true,
-                showDownloadButton: false
-            });
-
-
         }, {}]
     }, {}, [1])(1)
 });
-
-

@@ -50,22 +50,22 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                 </div>
             </div>
         </div>
-  );
+    );
 };
 
 
 Alternator.propTypes = {
-  variant: PropTypes.oneOf(['Image left', 'Image right']),
-  heading: PropTypes.string.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  imageCredit: PropTypes.string.isRequired,
-  paragraphText: PropTypes.string.isRequired
+    variant: PropTypes.oneOf(['Image left', 'Image right']),
+    heading: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    imageCredit: PropTypes.string.isRequired,
+    paragraphText: PropTypes.string.isRequired
 };
 
 Alternator.defaultProps = {
-  variant: 'Image left',
-  heading: 'Pests and diseases',
-  paragraphText: 'New tree diseases and insect pests are arriving in the UK each year, affecting tree health. In many areas, high and increasing deer numbers prevent new saplings from establishing and can impact woodland ground flora. This hinders progress with restoration.',
-  imageURL: 'https://www.woodlandtrust.org.uk/media/1387/muntjack-deer-wtml-1062471-amy-lewis.jpg?center=0.424,0.46396396396396394&amp;mode=crop&amp;width=635&amp;height=357&amp;rnd=132048886220000000',
-  imageCredit: 'Credit: Amy Lewis / WTML'
+    variant: 'Image left',
+    heading: 'Pests and diseases',
+    paragraphText: 'New tree diseases and insect pests are arriving in the UK each year, affecting tree health. In many areas, high and increasing deer numbers prevent new saplings from establishing and can impact woodland ground flora. This hinders progress with restoration.',
+    imageURL: 'https://www.woodlandtrust.org.uk/media/1387/muntjack-deer-wtml-1062471-amy-lewis.jpg?center=0.424,0.46396396396396394&amp;mode=crop&amp;width=635&amp;height=357&amp;rnd=132048886220000000',
+    imageCredit: 'Credit: Amy Lewis / WTML'
 };
