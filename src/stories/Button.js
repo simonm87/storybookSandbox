@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({ buttonType, backgroundColor, size, label, ...props }) => {
 
-    let sizeClass = '';
-    if (size === 'small') {
-        sizeClass = ' sm';
-    }
+  let sizeClass = '';
+  if (size === 'small') {
+    sizeClass = ' sm';
+  }
 
   return (
     <a className={`btn--${buttonType}${sizeClass}`}>{label}</a>
