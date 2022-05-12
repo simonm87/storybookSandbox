@@ -43,7 +43,6 @@ export const Alternator = ({ variant, paragraphText, heading, imageCredit, image
                             </div>
                             <div className={copyContainerClass}>
                                 <div className="title"><h3>{heading}</h3></div>
-                                <h3>Another to test visual checks</h3>
                                 <p>{paragraphText}</p>
                             </div>
                         </div>

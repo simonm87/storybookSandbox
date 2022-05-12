@@ -28,7 +28,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "scss": "node-sass --watch src/sass -o src/css",
-    "chromatic": "chromatic --exit-zero-on-changes --project-token=a6fdf51c0fd1"
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "eslintConfig": {
     "extends": [
