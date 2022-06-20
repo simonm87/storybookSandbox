@@ -7,7 +7,7 @@ import '../css/main.css'
 /**
  * Primary UI component for user interaction
  */
-export const ListingComponent = ({ variant, paragraphText, heading, imageCredit, imageURL, backgroundColour, ...props }) => {
+export const ListingComponent = ({ variant, paragraphText, heading, labelText, ...props }) => {
 
 
     return (
@@ -45,17 +45,13 @@ export const ListingComponent = ({ variant, paragraphText, heading, imageCredit,
                                                 </div>
                                                 <div className="col-lg-7 excerpt-list-card__body">
                                                     <p className="excerpt-list-card__body__category-label">
-                                                        Trees woods and wildlife
+                                                        {labelText}
                                                     </p>
                                                     <h4 className="excerpt-list-card__body__title">
-                                                        A-Z of British trees
+                                                        {heading}
                                                     </h4>
                                                     <p className="excerpt-list-card__body__summary-paragraph">
-                                                        Explore our simple A-Z identification guide to the trees
-                                                        of Britain, from natives to naturalised and widely
-                                                        planted non-native species. You'll find images, tree
-                                                        descriptions and information on where you're likely to
-                                                        find them.
+                                                        {paragraphText}
                                                     </p>
                                                 </div>
                                             </div>
@@ -238,17 +234,15 @@ export const ListingComponent = ({ variant, paragraphText, heading, imageCredit,
 
 
 ListingComponent.propTypes = {
-    variant: PropTypes.oneOf(['Image left', 'Image right']),
+    variant: PropTypes.oneOf(['Image left']),
     heading: PropTypes.string.isRequired,
-    imageURL: PropTypes.string.isRequired,
-    imageCredit: PropTypes.string.isRequired,
-    paragraphText: PropTypes.string.isRequired
+    paragraphText: PropTypes.string.isRequired,
+    labelText: PropTypes.string.isRequired
 };
 
 ListingComponent.defaultProps = {
     variant: 'Image left',
-    heading: 'Pests and diseases',
-    paragraphText: 'New tree diseases and insect pests are arriving in the UK each year, affecting tree health. In many areas, high and increasing deer numbers prevent new saplings from establishing and can impact woodland ground flora. This hinders progress with restoration.',
-    imageURL: 'https://www.woodlandtrust.org.uk/media/1387/muntjack-deer-wtml-1062471-amy-lewis.jpg?center=0.424,0.46396396396396394&amp;mode=crop&amp;width=635&amp;height=357&amp;rnd=132048886220000000',
-    imageCredit: 'Credit: Amy Lewis / WTML'
+    heading: 'A-Z of British trees',
+    paragraphText: 'Explore our simple A-Z identification guide to the trees of Britain, from natives to naturalised and widely planted non-native species. You will find images, tree descriptions and information on where you are likely to find them.',
+    labelText: 'TREES WOODS AND WILDLIFE'
 };
