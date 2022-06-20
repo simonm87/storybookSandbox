@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+
+    console.info("card deck...")
+
     if ($('.card-deck').length) {
 
         var nextButtons = [];

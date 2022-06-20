@@ -1,6 +1,7 @@
 import React from 'react';
 import { CTA } from './CTA';
 import { withDesign } from 'storybook-addon-designs';
+import { getByLabelText } from '@testing-library/react';
 
 export default {
     title: 'Example/CTA',
@@ -8,6 +9,11 @@ export default {
     decorators: [withDesign],
     argTypes: {
         variant: {
+            table: {
+                category: 'Configuration'
+            }
+        },
+        softActionBackground: {
             table: {
                 category: 'Configuration'
             }
@@ -34,6 +40,7 @@ Overlap.args = {
     variant: 'Overlap',
 };
 
+
 export const ImageLeft = Template.bind({});
 ImageLeft.args = {
     variant: 'Image left',
@@ -50,8 +57,8 @@ ImageLeft.parameters = {
         url: 'https://www.figma.com/file/evEb4d2dF2cyrzz8tG5LQq/Core-Components?node-id=98%3A1926',
     },
     grid: {
-		columns: 6,
-	},
+        columns: 6,
+    },
 }
 
 export const ImageRight = Template.bind({});
@@ -60,8 +67,9 @@ ImageRight.args = {
 };
 
 export const Soft = Template.bind({});
-ImageLeft.args = {
+Soft.args = {
     variant: 'Soft',
+    softActionBackground: false
 };
 
 

@@ -1,26 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import classNames from "classnames";
 
 export const Button = ({ buttonType, backgroundColor, size, label, ...props }) => {
 
-  let sizeClass = '';
-  if (size === 'small') {
-    sizeClass = ' sm';
-  }
-
   return (
-    <a className={`btn--${buttonType}${sizeClass}`}>{label}</a>
-
-    //<button
-    //  type="button"
-    //  className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-    //  style={backgroundColor && { backgroundColor }}
-    //  {...props}
-    //>
-    //  {label}
-    //</button>
-
+    <a
+      className={classNames({
+        'btn--action': (buttonType === 'action' ? true : false),
+        'btn--outline': (buttonType === 'outline' ? true : false),
+        'sm': (size === 'small' ? true : false)
+      })}>{label}</a>
   );
 };
 
@@ -33,7 +24,7 @@ Button.propTypes = {
   /**
    * What background color to use
    */
-  backgroundColor: PropTypes.string,
+  //backgroundColor: PropTypes.string,
   /**
    * What type of button is it?
    */
@@ -53,7 +44,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
+  //backgroundColor: null,
   buttonType: 'action',
   size: 'large',
   onClick: undefined
