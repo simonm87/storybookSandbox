@@ -4,7 +4,7 @@ import '../css/main.css'
 import { Button } from '../stories/Button'
 import classNames from "classnames";
 
-export const CTA = ({ variant, softActionBackground, ...props }) => {
+export const CTA = ({ variant, softActionBackground, paragraphText, heading, buttonLabel, ...props }) => {
 
     return (
         <div className="container">
@@ -49,16 +49,14 @@ export const CTA = ({ variant, softActionBackground, ...props }) => {
                                     <div className="ctacard__body d-flex justify-content-center">
                                         <div className="col-md-10 col-lg-6 text-center">
                                             <h4 className="ctacard__body__title">
-                                                Urge Government to set ambitious targets for nature
+                                                {heading}
                                             </h4>
                                             <p className="ctacard__body__summary" />
                                             <p>
-                                                Help create a lasting commitment to woods and trees. Create
-                                                change for our wildlife and climate.
+                                                {paragraphText}
                                             </p>
                                             <p />
-                                            <Button size="large" buttonType="action" label="Respond now"></Button>
-                                            {/* <a href="https://campaigns.woodlandtrust.org.uk/page/99612/action/1" className="btn--action">Respond to the consultation</a> */}
+                                            <Button size="large" buttonType="action" label={buttonLabel}></Button>
                                         </div>
                                     </div>
                                 </div>
@@ -72,14 +70,19 @@ export const CTA = ({ variant, softActionBackground, ...props }) => {
 };
 
 
-//Relates to controls
 CTA.propTypes = {
     variant: PropTypes.oneOf(['Overlap', 'Image left', 'Image right', 'Soft']),
     softActionBackground: PropTypes.bool,
+    heading: PropTypes.string.isRequired,
+    paragraphText: PropTypes.string.isRequired,
+    buttonLabel: PropTypes.string.isRequired
 };
 
-//Default values for controls
+
 CTA.defaultProps = {
     variant: 'Overlap',
-    softActionBackground: false
+    softActionBackground: false,
+    heading: 'Urge Government to set ambitious targets for nature',
+    paragraphText: 'Help create a lasting commitment to woods and trees. Create change for our wildlife and climate.',
+    buttonLabel: 'Respond now'
 };

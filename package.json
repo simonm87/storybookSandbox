@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.8.1",
     "@tinymce/tinymce-react": "^3.12.2",
     "bootstrap": "^4.6.0",
+    "classnames": "^2.3.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -28,7 +29,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "scss": "node-sass --watch src/sass -o src/css",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes --project-token=a6fdf51c0fd1"
   },
   "eslintConfig": {
     "extends": [

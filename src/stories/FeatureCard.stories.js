@@ -18,16 +18,6 @@ export default {
                 category: 'Colours'
             }
         },
-        imageURL: {
-            table: {
-                category: 'Image'
-            }
-        },
-        imageCredit: {
-            table: {
-                category: 'Image'
-            }
-        },
         heading: {
             table: {
                 category: 'Text'
@@ -38,12 +28,17 @@ export default {
                 category: 'Text'
             }
         },
+        hyperlink: {
+            table: {
+                category: 'Text'
+            }
+        },
         styles: {
             description: 'file paths:',
             table: {
                 category: 'dependencies',
                 type: {
-                    summary: 'sass/base/_base.scss sass/base/_typography.scss sass/abstracts/_mixins.scss sass/_FeatureCard.scss sass/vendor/_bootstrap.scss',
+                    summary: 'sass/base/_base.scss sass/base/_typography.scss sass/abstracts/_mixins.scss sass/_cards.scss sass/vendor/_bootstrap.scss',
                 },
             },
             control: {
@@ -63,16 +58,7 @@ ImageLeft.args = {
 ImageLeft.parameters = {
     docs: {
         description: {
-            component: "<h3>We use the right, left FeatureCard to visually demonstrate features and benefits and describe the appearance and behaviour of trees, woods and wildlife.</h3><p><h4>Guidance:</h4>This component relies on the bootstrap responsive grid system and uses <code class='highlighter- rouge'>.col-md-8</code> and <code class='highlighter- rouge'>.col-lg-7</code> for both image and copy columns. The copy column also uses offset to overlay it over the image on larger devices with <code class='highlighter- rouge'>.offset-lg-5</code> and <code class='highlighter- rouge'>.offset-md-4</code>. FeatureCard image ratio is 16:9 with a maximum crop size of 690px x 388px on medium devices (e.g iPad portrait). We do implement srcset to define a list of different images along with size information so that browsers can pick the most appropriate image based on the actual device's resolution. Lazy loading images is achieved via Intersection Observer API.  </p><p><h4>Dependancies:</h4> Bootstrap 4.1.3, Intersection Observer API (lazy loading)</p><p><h4>Styles:</h4> <code class='highlighter-rouge'>sass/base/_base.scss</code> <code class='highlighter-rouge'>sass/base/_typography.scss</code> <code class='highlighter-rouge'>sass/abstracts/_mixins.scss</code> <code class='highlighter-rouge'>sass/_FeatureCard.scss</code> <code class='highlighter-rouge'>sass/vendor/_bootstrap.scss</code></p> ",
+            component: "<h3>Feature cards promote related content that expands on our story, our cause and the difference we make through the work that we do. The goal is to guide users toward an action.</h3><p><h4>How we use it:</h4>Use a feature card to move users forwards in the journey funnel or maintain their position. Avoid using it to move users back to awareness level content if they are already on expansion or action pages.</p><p><h4>Dependancies:</h4> Bootstrap 4.1.3, Intersection Observer API (lazy loading)</p><p><h4>Styles:</h4> <code class='highlighter-rouge'>sass/base/_base.scss</code> <code class='highlighter-rouge'>sass/base/_typography.scss</code> <code class='highlighter-rouge'>sass/abstracts/_mixins.scss</code> <code class='highlighter-rouge'>sass/_cards.scss</code> <code class='highlighter-rouge'>sass/vendor/_bootstrap.scss</code></p>",
         },
-    },
-    design: {
-        type: 'figma',
-        url: 'https://www.figma.com/file/evEb4d2dF2cyrzz8tG5LQq/Core-Components?node-id=98%3A1926',
     }
 }
-
-export const ImageRight = Template.bind({});
-ImageRight.args = {
-    variant: 'Image right',
-};
